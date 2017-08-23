@@ -86,8 +86,9 @@ public class MainActivity extends BaseActivity {
                 iconImg.setVisibility(View.VISIBLE);
                 titleTv.setText("");
                 hudongImg.setVisibility(View.VISIBLE);
-                FragmentMager.getInstance().start(R.id.container, HomePageFragment.class, false).build();
+                HomePageFragment homePageFragment = (HomePageFragment) FragmentMager.getInstance().start(R.id.container, HomePageFragment.class, false).build();
                 Logger.d("22222");
+                new HomePresenter(homePageFragment);
                 break;
             case R.id.homePandaLive:
                 iconImg.setVisibility(View.GONE);
