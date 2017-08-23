@@ -2,7 +2,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.live.panda_live.PandaLiveFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/pandanlive_vitamio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+       <!-- <io.vov.vitamio.widget.VideoView
+            android:visibility="gone"
+            android:id="@+id/live_video"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />-->
+    </FrameLayout>
+    <TextView
+        android:id="@+id/pandanlive_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="成都基地高清精切线路"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="简介" />
+
+        <ImageView
+            android:id="@+id/pandanlive_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/com_facebook_tooltip_blue_bottomnub" />
+    </RelativeLayout>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/pandanlive_tablayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <com.jiyun.qcloud.dashixummoban.view.MyViewPager
+        android:id="@+id/pandanlive_viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>
