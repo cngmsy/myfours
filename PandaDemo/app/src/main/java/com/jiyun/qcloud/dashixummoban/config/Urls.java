@@ -22,4 +22,6 @@ public class Urls {
     public static final String IMGCODE = "http://reg.cntv.cn/simple/verificationCode.action";
     //邮箱注册
     public static final String EMAILREGISTER = "https://reg.cntv.cn/api/register.action";
+    //滚滚视频
+    public static final String GUNGUN = BASEURL+"video/index.json";
 }

@@ -15,4 +15,10 @@ public class PandaHomeModelImpl implements IPandaHomeModel {
     public void loadHomeList(NetWorkCallBack<PandaHome> callback) {
         iHttp.get(Urls.PANDAHOME,null,callback);
     }
+
+   /* @Override
+    public void loadgungunList(NetWorkCallBack<Gun> callBack) {
+        iHttp.get(Urls.GUNGUN,null,callBack);
+    }*/
+
 }
