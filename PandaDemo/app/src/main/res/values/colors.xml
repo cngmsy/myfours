@@ -3,4 +3,18 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="baise">#fff</color>
+    <color name="huise">#d1d0d0</color>
+    <color name="share_it_background">#e6ebef</color>
+    <color name="touminglan">#50425af2</color>
+    <color name="touminglanadd">#7d85b3</color>
+    <color name="black">#000</color>
+    <color name="heise">#464646</color>
+    <color name="live_tab_text">#3565A6</color>
+    <color name="live_tab_bianjie">#E6EBF0</color>
+    <color name="live_tab_zhishiqi">#1E539C</color>
+    <color name="live_item">#FFFFFF</color>
+    <color name="live_item_bg">#E0E5EA</color>
+    <color name="translucent_background">#603F51B5</color>
 </resources>
