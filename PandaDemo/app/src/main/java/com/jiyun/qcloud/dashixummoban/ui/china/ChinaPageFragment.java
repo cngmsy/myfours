@@ -12,6 +12,7 @@ import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
  */
 public class ChinaPageFragment extends BaseFragment {
 
+
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_china_page;
