@@ -1,9 +1,9 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-     >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="@dimen/y80"
@@ -15,6 +15,9 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/y80"
         android:layout_weight="7"
+        app:tabSelectedTextColor="@color/colorPrimaryDark"
+        app:tabTextColor="@color/black"
+        app:tabIndicatorColor="@color/colorPrimaryDark"
         />
 
     <ImageView
@@ -26,7 +29,7 @@
         />
 </LinearLayout>
 
-<android.support.v4.view.ViewPager
+<com.jiyun.qcloud.dashixummoban.view.MyViewPager
     android:id="@+id/chinaViewPager"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"

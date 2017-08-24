@@ -2,18 +2,25 @@ package com.jiyun.qcloud.dashixummoban.ui.culture;
 
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.gungun.Gun;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.Unbinder;
 
 /**
@@ -21,10 +28,18 @@ import butterknife.Unbinder;
  */
 public class CulturePageFragment extends BaseFragment implements CultureContract.View {
 
-    @BindView(R.id.gunxrecycler)
+    private  ImageView gungunHeaderimage;
+   private TextView gungunHeadercontext;
+    private int refreshTime = 0;
     XRecyclerView gunxrecycler;
     private CultureContract.Presenter presenter;
     Unbinder unbinder;
+    List<Gun.ListBean> mList = new ArrayList<>();
+    private String image;
+    private String title;
+    private View infla;
+    private CuAdapter adapter;
+    private List<Gun.ListBean> list;
 
     @Override
     protected int getLayoutRes() {
@@ -33,13 +48,53 @@ public class CulturePageFragment extends BaseFragment implements CultureContract
 
     @Override
     protected void initData() {
-        if (presenter != null) {
+        presenter=new CulturePresenter(this);
+        if (presenter!= null) {
             presenter.start();
         }
     }
 
     @Override
     protected void initView(View view) {
+       gunxrecycler = view.findViewById(R.id.gunxrecycler);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
+        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+        gunxrecycler.setLayoutManager(layoutManager);
+        gunxrecycler.setPullRefreshEnabled(true);
+        gunxrecycler.setLoadingMoreProgressStyle(ProgressStyle.Pacman);
+        gunxrecycler.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
+        gunxrecycler.setArrowImageView(R.drawable.iconfont_downgrey);
+        gunxrecycler.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                refreshTime ++;
+                new Handler().postDelayed(new Runnable(){
+                    public void run() {
+                        mList.clear();
+                        mList.addAll(list);
+                        adapter = new CuAdapter(getContext(),mList);
+                        gunxrecycler.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
+                        gunxrecycler.refreshComplete();
+                    }
+
+                }, 3000);
+            }
+
+            @Override
+            public void onLoadMore() {
+                new Handler().postDelayed(new Runnable(){
+                    public void run() {
+                      /*  for(int i = 0; i < 15 ;i++){
+                            mList.add( i + mList.size() );
+                        }*/
+                        adapter.notifyDataSetChanged();
+                        gunxrecycler.loadMoreComplete();
+                    }
+                }, 3000);
+
+            }
+        });
 
     }
 
@@ -47,31 +102,40 @@ public class CulturePageFragment extends BaseFragment implements CultureContract
     public void setBundle(Bundle bundle) {
 
     }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        unbinder = ButterKnife.bind(this, rootView);
-        return rootView;
-    }
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
-
     @Override
     public void showGunlistData(Gun gun) {
 
+        List<Gun.BigImgBean> palist = gun.getBigImg();
+        for (int i = 0; i < palist.size(); i++) {
+            image = palist.get(i).getImage();
+            title = palist.get(i).getTitle();
+            Log.e("TAG",image+title+"..............");
+        }
+        list = gun.getList();
+        mList.addAll(list);
+        adapter = new CuAdapter(getContext(),mList);
+        gunxrecycler.setAdapter(adapter);
+        initimage();
+        getActivity().runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                adapter.notifyDataSetChanged();
+            }
+        });
     }
 
+    private void initimage() {
+        infla = LayoutInflater.from(getContext()).inflate(R.layout.gungun_header, null);
+        gungunHeaderimage = infla.findViewById(R.id.gungun_headerimage);
+        gungunHeadercontext = infla.findViewById(R.id.gungun_headercontext);
+        gungunHeadercontext.setText(title);
+        Glide.with(getContext()).load(image).into(gungunHeaderimage);
+        gunxrecycler.addHeaderView(infla);
+    }
     @Override
     public void listener() {
 
     }
-
     @Override
     public void showProgress() {
 
@@ -89,6 +153,7 @@ public class CulturePageFragment extends BaseFragment implements CultureContract
 
     @Override
     public void setPresenter(CultureContract.Presenter presenter) {
-
+        this.presenter = presenter;
     }
+
 }

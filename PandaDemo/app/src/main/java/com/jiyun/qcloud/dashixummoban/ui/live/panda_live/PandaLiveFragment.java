@@ -55,7 +55,6 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
             }
         }
     };
-
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_panda_live;
@@ -122,6 +121,7 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
 
         list.add(new MultiFragment());
         list.add(new BianLiveFragment());
+
 
         Glide.with(getActivity())
                 .load(resultData.getLive().get(0).getImage())

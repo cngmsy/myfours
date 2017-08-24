@@ -6,9 +6,7 @@ import java.util.List;
  * Created by liuwangping on 2017/8/23.
  */
 
-public class TabBean {
-
-
+public class ChinaTabBean {
     private List<TablistBean> tablist;
     private List<AlllistBean> alllist;
 
