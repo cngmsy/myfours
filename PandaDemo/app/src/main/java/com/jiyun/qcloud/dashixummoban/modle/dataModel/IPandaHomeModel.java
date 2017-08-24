@@ -2,6 +2,8 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
@@ -18,4 +20,7 @@ public interface IPandaHomeModel extends BaseModel {
     void getPandaLive(NetWorkCallBack<PandaLiveBean> callBack);
 
     void getMultiData(NetWorkCallBack<MultiBean> callBack);
+
+   void getFasongData(String app, String author, String authorid, String data,String itemid, String message,NetWorkCallBack<FasongBean> callBack);
+    void getBiankanBianliaoData(NetWorkCallBack<BiankanBianliaoBean> callBack);
 }

@@ -8,11 +8,13 @@
         android:id="@+id/live_relative"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y350" >
+
         <!--<io.vov.vitamio.widget.VideoView-->
             <!--android:id="@+id/look_video"-->
             <!--android:visibility="gone"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent" />-->
+
         <ImageView
             android:scaleType="fitXY"
             android:id="@+id/look_img"
