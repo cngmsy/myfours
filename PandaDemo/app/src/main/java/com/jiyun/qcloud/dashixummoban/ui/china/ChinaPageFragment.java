@@ -18,20 +18,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  *
  */
-public class ChinaPageFragment extends BaseFragment implements LiveChinaContract.View{
+public class ChinaPageFragment extends BaseFragment implements LiveChinaContract.View {
     @BindView(R.id.chinaTabLayout)
     TabLayout chinaTabLayout;
     @BindView(R.id.chinaAdd)
     ImageView chinaAdd;
     @BindView(R.id.chinaViewPager)
     MyViewPager chinaViewPager;
+
     private LiveChinaContract.Presenter presenter;
-    private List<String> tabNamelist=new ArrayList<>();
-    private List<Fragment> fragmentlist=new ArrayList<>();
+    private List<String> tabNamelist = new ArrayList<>();
+    private List<Fragment> fragmentlist = new ArrayList<>();
     private ChinaTabAdapter adapter;
 
     @Override
@@ -41,8 +43,8 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
 
     @Override
     protected void initData() {
-        presenter=new LiveChinaPresenter(this);
-        if(presenter!=null) {
+        presenter = new LiveChinaPresenter(this);
+        if (presenter != null) {
             presenter.start();
         }
     }
@@ -61,12 +63,13 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
     @Override
     public void showChinaTab(ChinaTabBean chinaTabBean) {
         List<ChinaTabBean.TablistBean> tablist = chinaTabBean.getTablist();
-        for (int i=0;i<tablist.size();i++){
+
+        for (int i = 0; i < tablist.size(); i++) {
             tabNamelist.add(tablist.get(i).getTitle());
             fragmentlist.add(new ChinaItemFragment(tablist.get(i).getUrl()));
 
         }
-        adapter=new ChinaTabAdapter(getChildFragmentManager(),fragmentlist,tabNamelist);
+        adapter = new ChinaTabAdapter(getChildFragmentManager(), fragmentlist, tabNamelist);
 
         chinaViewPager.setNoScroll(true);
         chinaViewPager.setAdapter(adapter);
@@ -92,7 +95,14 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
 
     @Override
     public void setPresenter(LiveChinaContract.Presenter presenter) {
-            this.presenter=presenter;
+        this.presenter = presenter;
+
+    }
+
+
+
+    @OnClick(R.id.chinaAdd)
+    public void onViewClicked() {
 
     }
 }
