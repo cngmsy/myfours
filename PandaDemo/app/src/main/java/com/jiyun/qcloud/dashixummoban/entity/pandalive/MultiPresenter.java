@@ -40,5 +40,10 @@ public class MultiPresenter implements MultiContract.MultiPresenter  {
         });
     }
 
+    @Override
+    public void seconed(String url) {
+
+    }
+
 
 }

@@ -26,5 +26,8 @@ public class Urls {
     //滚滚视频
     public static final String GUNGUN = BASEURL+"video/index.json";
 
-    public static final String MULITANGLE="http://www.ipanda.com/kehuduan/PAGE14501769230331752/PAGE14501787896813312/index.json";
+    public static final String MULITANGLE = "http://www.ipanda.com/kehuduan/PAGE14501769230331752/PAGE14501787896813312/index.json";
+    //熊猫播报
+    public static final String BOBAO = BASEURL+"news/index.json";
+    public static final String BOBAOList = "http://api.cntv.cn/apicommon/index?path=iphoneInterface/general/getArticleAndVideoListInfo.json&primary_id=PAGE1422435191506336&serviceId=panda";
 }

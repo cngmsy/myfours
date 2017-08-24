@@ -46,4 +46,9 @@ public class HomePresenter implements HomeContract.Presenter {
             }
         });
     }
+
+    @Override
+    public void seconed(String url) {
+
+    }
 }
