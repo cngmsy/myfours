@@ -7,10 +7,9 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 public interface LiveContract {
     interface LiveView extends IBaseView<LivePresenter> {
         void setResultData(PandaLiveBean resultData);
-       // void setUrlurl(LivePanBean liveBean);
     }
 
     interface LivePresenter extends IBasePresenter {
-        void setUrlurl(String url);
+
     }
 }

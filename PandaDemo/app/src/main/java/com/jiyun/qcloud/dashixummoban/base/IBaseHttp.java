@@ -22,4 +22,5 @@ public interface IBaseHttp {
     void download();
     void loadImage(String url, ImageView imageView);
 
+
 }

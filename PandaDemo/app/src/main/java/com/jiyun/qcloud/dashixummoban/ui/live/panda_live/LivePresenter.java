@@ -37,9 +37,4 @@ public class LivePresenter implements LiveContract.LivePresenter {
             }
         });
     }
-
-    @Override
-    public void setUrlurl(String url) {
-
-    }
 }

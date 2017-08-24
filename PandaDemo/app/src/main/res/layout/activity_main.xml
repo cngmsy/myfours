@@ -90,7 +90,7 @@
             android:button="@null"
             android:gravity="center"
             android:drawableTop="@drawable/tab_panda_culture_normals"
-            android:text="熊猫文化"
+            android:text="滚滚视频"
             android:drawablePadding="5dp"
             android:textSize="12sp"/>
         <RadioButton
@@ -101,7 +101,7 @@
             android:button="@null"
             android:gravity="center"
             android:drawableTop="@drawable/tab_panda_eye_normal"
-            android:text="熊猫观察"
+            android:text="熊猫播报"
             android:drawablePadding="5dp"
             android:textSize="12sp"/>
 
