@@ -2,6 +2,7 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
 /**
@@ -11,4 +12,6 @@ import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 public interface IPandaHomeModel extends BaseModel {
 
     void loadHomeList(NetWorkCallBack<PandaHome> callback);
+
+    void getPandaLive(NetWorkCallBack<PandaLiveBean> callBack);
 }

@@ -32,7 +32,6 @@ public class LivePageFragment extends BaseFragment{
     TabLayout tabLayout;
     @BindView(R.id.view_page)
     MyViewPager viewPage;
-    Unbinder unbinder1;
     private List<String> name = new ArrayList<>();
     private List<Fragment> fragmentList = new ArrayList<>();
     private PanadLiveFragmentAdapter panadLiveFragmentAdapter;

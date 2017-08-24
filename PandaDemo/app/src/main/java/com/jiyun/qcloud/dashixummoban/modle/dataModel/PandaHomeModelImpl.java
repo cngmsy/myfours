@@ -3,6 +3,7 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 import com.jiyun.qcloud.dashixummoban.config.Urls;
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
 /**
@@ -14,5 +15,9 @@ public class  PandaHomeModelImpl implements IPandaHomeModel {
     @Override
     public void loadHomeList(NetWorkCallBack<PandaHome> callback) {
         iHttp.get(Urls.PANDAHOME,null,callback);
+    }
+    @Override
+    public void getPandaLive(NetWorkCallBack<PandaLiveBean> callBack) {
+       iHttp.get(Urls.PANDALIVE,null,callBack);
     }
 }
