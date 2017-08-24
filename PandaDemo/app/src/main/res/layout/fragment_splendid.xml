@@ -2,12 +2,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/live_item_bg"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.live.splendid.SplendidFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/splendid_xrv"></com.jcodecraeer.xrecyclerview.XRecyclerView>
 
 </FrameLayout>

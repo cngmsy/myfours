@@ -22,7 +22,6 @@ import com.jiyun.qcloud.dashixummoban.view.MyViewPager;
 import java.util.ArrayList;
 
 import butterknife.OnClick;
-import butterknife.Unbinder;
 
 import static com.jiyun.qcloud.dashixummoban.R.id.pandanlive_detail;
 
@@ -36,7 +35,6 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
     ImageView pandanliveDetail;
     TabLayout pandanliveTablayout;
     MyViewPager pandanliveViewpage;
-    Unbinder unbinder;
     TextView pandanliveContent;
     private LiveContract.LivePresenter livePresenter;
     private int co = 1;
@@ -54,7 +52,6 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
                     pandanliveViewpage.setNoScroll(true);
                     pandanliveTablayout.setupWithViewPager(pandanliveViewpage);
                     break;
-
             }
         }
     };
@@ -72,7 +69,6 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
 
     @Override
     protected void initView(View view) {
-
         pandanliveVitamio = (ImageView) view.findViewById(R.id.pandanlive_vitamio);
         pandanliveName = (TextView) view.findViewById(R.id.pandanlive_name);
         pandanliveContent = (TextView) view.findViewById(R.id.pandanlive_content);
