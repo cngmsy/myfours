@@ -16,18 +16,30 @@ public class Urls {
     //熊猫直播
     public static final String PANDALIVE = "http://www.ipanda.com/kehuduan/PAGE14501769230331752/index.json";
     //列表
-    public static final String PAGELIST = BASEURL + "PAGE14501786751053212/index.json";
+    public static final String PAGELIST = BASEURL+"PAGE14501786751053212/index.json";
+    //直播中国
+    public static final String LIVECHINA = BASEURL+"PAGE14501775094142282/index.json";
+
+
 
     public static final String PAGEINFOLIST = "http://101.200.142.201/MyListLoadAuto/listload";
     //获取图片验证码
     public static final String IMGCODE = "http://reg.cntv.cn/simple/verificationCode.action";
     //邮箱注册
     public static final String EMAILREGISTER = "https://reg.cntv.cn/api/register.action";
+
+
+
+
     //滚滚视频
     public static final String GUNGUN = BASEURL+"video/index.json";
+
 
     public static final String MULITANGLE = "http://www.ipanda.com/kehuduan/PAGE14501769230331752/PAGE14501787896813312/index.json";
     //熊猫播报
     public static final String BOBAO = BASEURL+"news/index.json";
     public static final String BOBAOList = "http://api.cntv.cn/apicommon/index?path=iphoneInterface/general/getArticleAndVideoListInfo.json&primary_id=PAGE1422435191506336&serviceId=panda";
+
+
+
 }

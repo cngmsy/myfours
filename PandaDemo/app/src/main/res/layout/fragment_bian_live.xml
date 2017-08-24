@@ -1,13 +1,41 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.live.panda_live.fragment.BianLiveFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/biankan_xrecyclerview"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+    </com.jcodecraeer.xrecyclerview.XRecyclerView>
 
-</FrameLayout>
+    <LinearLayout
+        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:hint="添加评论..."
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/bianlive_ed"
+            android:id="@+id/biankan_ed" />
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/biankan_button"
+            android:textColor="@color/baise"
+            android:text="发送"
+            android:layout_margin="10dp"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:background="@color/colorPrimary"
+            android:layout_alignParentRight="true" />
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
