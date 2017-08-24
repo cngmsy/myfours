@@ -8,7 +8,7 @@ import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 
 /**
- * 
+ *
  */
 public class BianLiveFragment extends BaseFragment {
 

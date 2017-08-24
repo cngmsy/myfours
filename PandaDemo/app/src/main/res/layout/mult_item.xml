@@ -14,6 +14,7 @@
             android:layout_height="70dp"
             android:id="@+id/mult_image"/>
         <ImageView
+            android:layout_marginBottom="8dp"
             android:layout_width="100dp"
             android:layout_height="20dp"
             android:layout_alignParentBottom="true"
@@ -24,7 +25,7 @@
             android:src="@drawable/lpanda_live_layer"
             android:layout_alignParentBottom="true"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="13dp"/>
     </RelativeLayout>
 
 
