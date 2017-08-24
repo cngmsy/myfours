@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="3dp"
+    android:background="#ffffff"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/gungun_context"
+        android:textSize="14dp"
+        android:text="fdfdfdfd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gungun_title"
+        android:layout_alignLeft="@+id/gungun_title"
+        android:layout_alignStart="@+id/gungun_title"
+        android:layout_marginTop="12dp" />
+
+
+    <ImageView
+        android:layout_width="160dp"
+        android:layout_height="90dp"
+        android:id="@+id/gungun_image"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="12dp" />
+
+    <TextView
+        android:id="@+id/gungun_title"
+        android:textSize="15dp"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:text="fdfdfdfd"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="11dp"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/gungun_image"
+        android:layout_toEndOf="@+id/gungun_image" />
+
+    <TextView
+        android:id="@+id/gungun_itemtime"
+        android:text="ddfdfd"
+        android:textSize="15dp"
+        android:textColor="#ffffff"
+        android:background="#65302d2d"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_alignBottom="@+id/gungun_image"
+        android:layout_alignLeft="@+id/gungun_image"
+        android:layout_alignStart="@+id/gungun_image" />
+</RelativeLayout>
