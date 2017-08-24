@@ -250,8 +250,6 @@ public class OkBaseHttpImpl implements IBaseHttp {
         Glide.with(App.mBaseActivity).load(url).into(imageView);
     }
 
-
-
     /**
      * 自动解析json至回调中的JavaBean
      * @param jsonData

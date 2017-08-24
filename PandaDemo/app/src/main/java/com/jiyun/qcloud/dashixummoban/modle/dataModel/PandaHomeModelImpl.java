@@ -3,6 +3,8 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 import com.jiyun.qcloud.dashixummoban.config.Urls;
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
 /**
@@ -10,15 +12,20 @@ import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
  */
 
 public class  PandaHomeModelImpl implements IPandaHomeModel {
-
+//主页
     @Override
     public void loadHomeList(NetWorkCallBack<PandaHome> callback) {
         iHttp.get(Urls.PANDAHOME,null,callback);
     }
-
-   /* @Override
-    public void loadgungunList(NetWorkCallBack<Gun> callBack) {
-        iHttp.get(Urls.GUNGUN,null,callBack);
-    }*/
+//熊猫直播正在直播
+    @Override
+    public void getPandaLive(NetWorkCallBack<PandaLiveBean> callBack) {
+       iHttp.get(Urls.PANDALIVE,null,callBack);
+    }
+//多视角直播
+    @Override
+    public void getMultiData(NetWorkCallBack<MultiBean> callBack) {
+        iHttp.get(Urls.MULITANGLE,null,callBack);
+    }
 
 }

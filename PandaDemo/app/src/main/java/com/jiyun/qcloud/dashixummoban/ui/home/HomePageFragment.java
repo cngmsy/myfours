@@ -41,6 +41,9 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
         LinearLayoutManager   manager = new LinearLayoutManager(getActivity());
         homerecycler.setLayoutManager(manager);
 
+
+
+
     }
 
     @Override

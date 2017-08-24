@@ -8,15 +8,16 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
+
         <ImageView
             android:id="@+id/pandanlive_vitamio"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-       <!-- <io.vov.vitamio.widget.VideoView
-            android:visibility="gone"
-            android:id="@+id/live_video"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />-->
+        <!-- <io.vov.vitamio.widget.VideoView
+             android:visibility="gone"
+             android:id="@+id/live_video"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent" />-->
     </FrameLayout>
     <TextView
         android:id="@+id/pandanlive_name"
@@ -43,6 +44,18 @@
             android:layout_centerHorizontal="true"
             android:src="@drawable/com_facebook_tooltip_blue_bottomnub" />
     </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/huise"
+        android:layout_marginTop="5dp"/>
+    <TextView
+        android:id="@+id/pandanlive_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textStyle="bold" />
+
     <android.support.design.widget.TabLayout
         android:id="@+id/pandanlive_tablayout"
         android:layout_width="match_parent"
