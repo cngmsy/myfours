@@ -1,12 +1,12 @@
 package com.jiyun.qcloud.dashixummoban.ui.live.splendid;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -26,15 +26,15 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
     private XRecyclerView xRecyclerView;
     private List<SplendBean.VideoBean> beanList = new ArrayList<>();
     private SplendAdapter splendAdapter;
-    private ProgressDialog dialog;
+ //   private ProgressDialog dialog;
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
-                case 1:
+               /* case 1:
                     dialog.dismiss();
-                    break;
+                    break;*/
                 case 2:
                     initData();
                     splendAdapter.notifyDataSetChanged();
@@ -42,6 +42,7 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
                     break;
                 case 3:
                     xRecyclerView.loadMoreComplete();
+                    Toast.makeText(getContext(), "暂无更多数据", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -87,10 +88,10 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
 
     @Override
     public void showProgress() {
-        dialog = new ProgressDialog(getActivity());
+   /*     dialog = new ProgressDialog(getActivity());
         dialog.setProgress(100);
         dialog.show();
-        // handler.sendEmptyMessageDelayed(0, 1000);
+        handler.sendEmptyMessageDelayed(1,1500);*/
     }
 
     @Override

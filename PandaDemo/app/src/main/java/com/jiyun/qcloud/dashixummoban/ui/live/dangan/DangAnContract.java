@@ -1,17 +1,18 @@
-package com.jiyun.qcloud.dashixummoban.ui.live.splendid;
+package com.jiyun.qcloud.dashixummoban.ui.live.dangan;
 
 import com.jiyun.qcloud.dashixummoban.base.IBasePresenter;
 import com.jiyun.qcloud.dashixummoban.base.IBaseView;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 
+/**
+ * Created by my301s on 2017/8/25.
+ */
 
-public interface SplendidContract {
-
-    interface SplendidView extends IBaseView<SplendidPresenter> {
+public interface DangAnContract {
+    interface DangAnView extends IBaseView<DangAnPresenter>{
         void setResultData(SplendBean resultData);
     }
-
-    interface SplendidPresenter extends IBasePresenter {
+    interface DangAnPresenter extends IBasePresenter{
 
     }
 }

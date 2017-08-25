@@ -58,5 +58,39 @@ public class  PandaHomeModelImpl implements IPandaHomeModel {
         HttpFactory.createOK().get(Urls.SPLENDURL,null,callBack);
     }
 
+    @Override
+    public void getDangXiongData(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.DANGXIONG,null,callBack);
+    }
+
+    @Override
+    public void getChaoMengData(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.CHAOMENG,null,callBack);
+    }
+
+    @Override
+    public void getDangAn(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.DANGAN,null,callBack);
+    }
+
+    @Override
+    public void getTop(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.TOP,null,callBack);
+    }
+
+    @Override
+    public void getNaXie(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.NAXIE,null,callBack);
+    }
+
+    @Override
+    public void getTeBie(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.TEBIE,null,callBack);
+    }
+
+    @Override
+    public void getNews(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.NEWS,null,callBack);
+    }
 
 }

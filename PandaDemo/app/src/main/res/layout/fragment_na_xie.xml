@@ -2,11 +2,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jiyun.qcloud.dashixummoban.ui.live.top.TopFragment">
+    tools:context="com.jiyun.qcloud.dashixummoban.ui.live.naxie.NaXieFragment">
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/topxrv"/>
+        android:id="@+id/naxiexrv"/>
 
 </FrameLayout>

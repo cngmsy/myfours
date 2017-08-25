@@ -17,9 +17,11 @@ public class SplendidPresenter implements SplendidContract.SplendidPresenter {
 
     @Override
     public void start() {
+   //     splendidView.showProgress();
         modelImp.getSplendData(new NetWorkCallBack<SplendBean>() {
             @Override
             public void onSuccess(SplendBean splendBean) {
+              //  splendidView.dimissProgress();
                 splendidView.setResultData(splendBean);
             }
 
@@ -27,11 +29,15 @@ public class SplendidPresenter implements SplendidContract.SplendidPresenter {
             public void onError(int errorCode, String errorMsg) {
 
             }
-
             @Override
             public void onFail(String netOff) {
 
             }
         });
+    }
+
+    @Override
+    public void seconed(String url) {
+
     }
 }

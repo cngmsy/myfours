@@ -26,4 +26,19 @@ public interface IPandaHomeModel extends BaseModel {
     void getBiankanBianliaoData(NetWorkCallBack<BiankanBianliaoBean> callBack);
 
     void getSplendData(NetWorkCallBack<SplendBean> callBack);
+
+    void getDangXiongData(NetWorkCallBack<SplendBean> callBack);
+
+    void getChaoMengData(NetWorkCallBack<SplendBean> callBack);
+
+    void getDangAn(NetWorkCallBack<SplendBean> callBack);
+
+    void getTop(NetWorkCallBack<SplendBean> callBack);
+
+    void getNaXie(NetWorkCallBack<SplendBean> callBack);
+
+    void getTeBie(NetWorkCallBack<SplendBean> callBack);
+
+    void getNews(NetWorkCallBack<SplendBean> callBack);
+
 }
