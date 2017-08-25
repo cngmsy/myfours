@@ -40,4 +40,9 @@ public class LiveChinaPresenter implements LiveChinaContract.Presenter {
 
     }
 
+    @Override
+    public void seconed(String url) {
+
+    }
+
 }

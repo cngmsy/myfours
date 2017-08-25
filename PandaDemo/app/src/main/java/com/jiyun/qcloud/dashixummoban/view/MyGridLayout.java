@@ -19,7 +19,7 @@ import java.util.List;
 
 public class MyGridLayout extends GridLayout {
     private View mDragedView;//被拖拽的view
-    private int mMargin =15;
+    private int mMargin =10;
     private boolean mDragAble;
 
     /**
@@ -49,7 +49,7 @@ public class MyGridLayout extends GridLayout {
      */
     public MyGridLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        setColumnCount(4);//初始化当前Gridlayout的条目个数
+        setColumnCount(3);//初始化当前Gridlayout的条目个数
         setLayoutTransition(new LayoutTransition());   // 设置 GridLayout 中的条目增加过渡动画
     }
 
@@ -79,12 +79,12 @@ public class MyGridLayout extends GridLayout {
     public void addItem(String strItem) {
         TextView tv = new TextView(getContext());
         GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
-        lp.width = getResources().getDisplayMetrics().widthPixels / 4 - mMargin * 2;
+        lp.width = getResources().getDisplayMetrics().widthPixels /3 - mMargin * 2;
         lp.height = GridLayout.LayoutParams.WRAP_CONTENT;
         lp.setMargins(mMargin,8,mMargin, 8);
         tv.setLayoutParams(lp);
         tv.setGravity(Gravity.CENTER);
-        tv.setPadding(6, 6, 6,6);
+        tv.setPadding(mMargin,8,mMargin, 8);
         tv.setText(strItem);
         tv.setBackgroundResource(R.drawable.tv_popup_item);
         MyGridLayout.this.addView(tv);

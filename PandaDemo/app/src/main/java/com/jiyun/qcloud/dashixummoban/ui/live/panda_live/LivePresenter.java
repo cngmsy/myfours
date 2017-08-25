@@ -37,4 +37,9 @@ public class LivePresenter implements LiveContract.LivePresenter {
             }
         });
     }
+
+    @Override
+    public void seconed(String url) {
+
+    }
 }
