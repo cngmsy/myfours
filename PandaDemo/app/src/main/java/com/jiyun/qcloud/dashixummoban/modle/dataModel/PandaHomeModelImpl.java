@@ -7,6 +7,7 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.HttpFactory;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
@@ -51,4 +52,11 @@ public class  PandaHomeModelImpl implements IPandaHomeModel {
     public void getBiankanBianliaoData(NetWorkCallBack<BiankanBianliaoBean> myCallBack) {
         HttpFactory.createOK().get("http://newcomment.cntv.cn/comment/list?prepage=20&app=ipandaApp&itemid=zhiboye_chat&nature=1&page=1", null, myCallBack);
     }
+
+    @Override
+    public void getSplendData(NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,null,callBack);
+    }
+
+
 }

@@ -122,12 +122,10 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
         list.add(new MultiFragment());
         list.add(new BianLiveFragment());
 
-
         Glide.with(getActivity())
                 .load(resultData.getLive().get(0).getImage())
                 .into(pandanliveVitamio);
         pandanliveContent.setText(resultData.getLive().get(0).getBrief());
-
         handler.sendEmptyMessage(1);
     }
 }

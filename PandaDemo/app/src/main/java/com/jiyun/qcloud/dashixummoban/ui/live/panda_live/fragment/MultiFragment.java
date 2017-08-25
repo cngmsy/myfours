@@ -2,7 +2,6 @@ package com.jiyun.qcloud.dashixummoban.ui.live.panda_live.fragment;
 
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.GridView;
 
@@ -16,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A simple {@link Fragment} subclass.
+ *
  */
 public class MultiFragment extends BaseFragment implements MultiContract.MultiView{
 
