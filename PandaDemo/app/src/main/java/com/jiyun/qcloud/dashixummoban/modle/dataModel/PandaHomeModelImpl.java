@@ -3,6 +3,8 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 import com.jiyun.qcloud.dashixummoban.config.Urls;
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
@@ -20,10 +22,21 @@ import java.util.Map;
  */
 
 public class  PandaHomeModelImpl implements IPandaHomeModel {
+
 //主页
     @Override
     public void loadHomeList(NetWorkCallBack<PandaHome> callback) {
-        iHttp.get(Urls.PANDAHOME,null,callback);
+        iHttp.get(Urls.HOMELUN,null,callback);
+    }
+
+    @Override
+    public void loadJingCaiList(NetWorkCallBack<WonderfulBean> callback) {
+        iHttp.get(Urls.WONDERFUL,null,callback);
+    }
+
+    @Override
+    public void loadGunGunList(NetWorkCallBack<BillowingBean> callback) {
+        iHttp.get(Urls.BILLOWING,null,callback);
     }
 //熊猫直播正在直播
     @Override

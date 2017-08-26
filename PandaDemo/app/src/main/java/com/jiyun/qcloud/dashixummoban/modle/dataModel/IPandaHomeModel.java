@@ -2,6 +2,8 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
@@ -17,15 +19,20 @@ import java.util.Map;
  */
 
 public interface IPandaHomeModel extends BaseModel {
-
+      //进行首页请求
     void loadHomeList(NetWorkCallBack<PandaHome> callback);
+    //进行精彩一刻
+    void loadJingCaiList(NetWorkCallBack<WonderfulBean> callback);
+    //进行滚滚视频
+    void loadGunGunList(NetWorkCallBack<BillowingBean> callback);
+
 
 
     void getPandaLive(NetWorkCallBack<PandaLiveBean> callBack);
 
     void getMultiData(NetWorkCallBack<MultiBean> callBack);
 
-   void getFasongData(String app, String author, String authorid, String data,String itemid, String message,NetWorkCallBack<FasongBean> callBack);
+    void getFasongData(String app, String author, String authorid, String data,String itemid, String message,NetWorkCallBack<FasongBean> callBack);
     void getBiankanBianliaoData(NetWorkCallBack<BiankanBianliaoBean> callBack);
 
     void getSplendData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);

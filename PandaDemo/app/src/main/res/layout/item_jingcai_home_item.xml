@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_margin="@dimen/x12"
+        android:id="@+id/rela"
+        android:layout_width="@dimen/x300"
+        android:layout_height="wrap_content"
+       >
+
+        <ImageView
+            android:id="@+id/jingImage"
+            android:layout_width="@dimen/x300"
+            android:layout_height="@dimen/x200"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/tab_panda_eye_normal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/jingImage"
+            android:layout_margin="@dimen/x20"
+            android:src="@drawable/lpanda_live_layer" />
+
+        <TextView
+            android:id="@+id/jingText"
+            android:layout_width="@dimen/x300"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jingImage"
+            android:ellipsize="end"
+            android:textColor="#000"
+            android:maxLines="2"
+            android:text="你好不知道比在干啥" />
+    </RelativeLayout>
+    <TextView
+
+        android:layout_margin="@dimen/x12"
+        android:id="@+id/jingdata"
+        android:textColor="#000"
+        android:text="2017-12-8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>

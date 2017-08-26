@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2017/8/23.
  * 首页滚滚视频
  */
-
+//http://www.ipanda.com/kehuduan/shipinliebieye/video/index.json
 public class BillowingBean {
     private List<ListBean> list;
 
