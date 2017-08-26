@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
-import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -16,7 +15,9 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.ui.live.splendid.SplendAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -27,22 +28,27 @@ public class TeBieFragment extends BaseFragment implements TeBieContract.TeBieVi
     private List<SplendBean.VideoBean> beanList = new ArrayList<>();
     private SplendAdapter splendAdapter;
    // private ProgressDialog dialog;
-    private Handler handler = new Handler() {
+   private Map<String,String> map=new HashMap<>();
+    private int Index = 1;
+    private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what) {
-             /*   case 1:
-                    dialog.dismiss();
-                    break;*/
+            switch (msg.what){
+                case 1:
+                    //  dialog.dismiss();
+                    break;
                 case 2:
                     initData();
-                    splendAdapter.notifyDataSetChanged();
+                    Index++;
                     xRecyclerView.refreshComplete();
+                    splendAdapter.notifyDataSetChanged();
                     break;
                 case 3:
+                    Index=1;
                     xRecyclerView.loadMoreComplete();
-                    Toast.makeText(getContext(), "暂无更多数据", Toast.LENGTH_SHORT).show();
+                    splendAdapter.notifyDataSetChanged();
+                    //   Toast.makeText(getContext(), "暂无更多数据", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -56,7 +62,14 @@ public class TeBieFragment extends BaseFragment implements TeBieContract.TeBieVi
     @Override
     protected void initData() {
         teBiePresenter = new TeBiePresenter(this);
-        teBiePresenter.start();
+        map.put("vsid","VSET100167308855");
+        map.put("n","7");
+        map.put("serviceId","panda");
+        map.put("o","desc");
+        map.put("of","time");
+        map.put("p",Index+"");
+        //   Log.d("SplendidFragment", map.toString());
+        teBiePresenter.mapData(map);
     }
 
     @Override

@@ -4,6 +4,8 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.util.Map;
+
 /**
  * Created by my301s on 2017/8/25.
  */
@@ -21,11 +23,21 @@ public class NewsPresenter implements NewsContract.NewsPresenter {
     @Override
     public void start() {
       //  newsView.showProgress();
-        pandaHomeModel.getNews(new NetWorkCallBack<SplendBean>() {
+
+    }
+
+    @Override
+    public void seconed(String url) {
+
+    }
+
+    @Override
+    public void mapData(Map<String, String> map) {
+        pandaHomeModel.getNews(map,new NetWorkCallBack<SplendBean>() {
             @Override
             public void onSuccess(SplendBean splendBean) {
-             //   newsView.dimissProgress();
-               newsView.getResult(splendBean);
+                //   newsView.dimissProgress();
+                newsView.getResult(splendBean);
             }
 
             @Override
@@ -38,10 +50,5 @@ public class NewsPresenter implements NewsContract.NewsPresenter {
 
             }
         });
-    }
-
-    @Override
-    public void seconed(String url) {
-
     }
 }

@@ -4,6 +4,8 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.util.Map;
+
 /**
  * Created by my301s on 2017/8/25.
  */
@@ -20,8 +22,18 @@ public class ChaoMengPresenter implements ChaoMengContact.ChaoMengPresenter {
 
     @Override
     public void start() {
-      //  chaoMengView.showProgress();
-        pandaHomeModel.getChaoMengData(new NetWorkCallBack<SplendBean>() {
+
+    }
+
+    @Override
+    public void seconed(String url) {
+
+    }
+
+    @Override
+    public void mapData(Map<String, String> map) {
+          //  chaoMengView.showProgress();
+        pandaHomeModel.getChaoMengData(map,new NetWorkCallBack<SplendBean>() {
             @Override
             public void onSuccess(SplendBean splendBean) {
              //  chaoMengView.dimissProgress();
@@ -38,10 +50,5 @@ public class ChaoMengPresenter implements ChaoMengContact.ChaoMengPresenter {
 
             }
         });
-    }
-
-    @Override
-    public void seconed(String url) {
-
     }
 }

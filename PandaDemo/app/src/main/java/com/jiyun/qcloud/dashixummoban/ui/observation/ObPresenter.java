@@ -63,5 +63,4 @@ public class ObPresenter implements ObContract.Presenter{
         },url);
     }
 
-
 }

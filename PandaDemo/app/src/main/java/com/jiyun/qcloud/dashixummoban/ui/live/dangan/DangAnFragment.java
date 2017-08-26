@@ -7,7 +7,6 @@ import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
-import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -17,7 +16,9 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.ui.live.splendid.SplendAdapter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +27,8 @@ public class DangAnFragment extends BaseFragment implements DangAnContract.DangA
     private DangAnContract.DangAnPresenter dangAnPresenter;
     private XRecyclerView xRecyclerView;
     private List<SplendBean.VideoBean> beanList=new ArrayList<>();
+    private Map<String, String> map = new HashMap<>();
+    private int Index = 1;
     private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -36,12 +39,16 @@ public class DangAnFragment extends BaseFragment implements DangAnContract.DangA
                     break;*/
                 case 2:
                     initData();
+                    Index++;
                     splendAdapter.notifyDataSetChanged();
                     xRecyclerView.refreshComplete();
+                    splendAdapter.notifyDataSetChanged();
                     break;
                 case 3:
+                    Index = 1;
                     xRecyclerView.loadMoreComplete();
-                    Toast.makeText(getContext(), "暂无更多数据", Toast.LENGTH_SHORT).show();
+                    splendAdapter.notifyDataSetChanged();
+                    //Toast.makeText(getContext(), "暂无更多数据", Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -57,7 +64,14 @@ public class DangAnFragment extends BaseFragment implements DangAnContract.DangA
     @Override
     protected void initData() {
         dangAnPresenter=new DangAnPresenter(this);
-        dangAnPresenter.start();
+        map.put("vsid", "VSET100340574858");
+        map.put("n", "7");
+        map.put("serviceId", "panda");
+        map.put("o", "desc");
+        map.put("of", "time");
+        map.put("p", Index + "");
+        //   Log.d("SplendidFragment", map.toString());
+        dangAnPresenter.mapData(map);
     }
 
     @Override

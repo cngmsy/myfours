@@ -45,5 +45,4 @@ public class MultiPresenter implements MultiContract.MultiPresenter  {
 
     }
 
-
 }

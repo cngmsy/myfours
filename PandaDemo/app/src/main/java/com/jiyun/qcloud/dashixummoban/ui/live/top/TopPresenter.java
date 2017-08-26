@@ -4,11 +4,13 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.util.Map;
+
 /**
  * Created by my301s on 2017/8/25.
  */
 
-public class TopPresenter implements TopContract.TopPresenter {
+public class TopPresenter implements  TopContract.TopPresenter {
     private TopContract.TopView topView;
     private PandaHomeModelImpl pandaHomeModel;
 
@@ -21,10 +23,20 @@ public class TopPresenter implements TopContract.TopPresenter {
     @Override
     public void start() {
       //  topView.showProgress();
-        pandaHomeModel.getTop(new NetWorkCallBack<SplendBean>() {
+
+    }
+
+    @Override
+    public void seconed(String url) {
+
+    }
+
+    @Override
+    public void mapData(Map<String, String> map) {
+        pandaHomeModel.getTop(map,new NetWorkCallBack<SplendBean>() {
             @Override
             public void onSuccess(SplendBean splendBean) {
-              //  topView.dimissProgress();
+                //  topView.dimissProgress();
                 topView.getResult(splendBean);
             }
 
@@ -38,10 +50,5 @@ public class TopPresenter implements TopContract.TopPresenter {
 
             }
         });
-    }
-
-    @Override
-    public void seconed(String url) {
-
     }
 }

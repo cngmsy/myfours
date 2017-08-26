@@ -4,6 +4,8 @@ import com.jiyun.qcloud.dashixummoban.base.IBasePresenter;
 import com.jiyun.qcloud.dashixummoban.base.IBaseView;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 
+import java.util.Map;
+
 /**
  * Created by my301s on 2017/8/25.
  */
@@ -13,6 +15,6 @@ public interface NewsContract {
         void getResult(SplendBean splendBean);
     }
     interface NewsPresenter extends IBasePresenter{
-
+        void mapData(Map<String,String> map);
     }
 }

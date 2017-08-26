@@ -4,6 +4,8 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.util.Map;
+
 
 public class SplendidPresenter implements SplendidContract.SplendidPresenter {
 
@@ -18,10 +20,20 @@ public class SplendidPresenter implements SplendidContract.SplendidPresenter {
     @Override
     public void start() {
    //     splendidView.showProgress();
-        modelImp.getSplendData(new NetWorkCallBack<SplendBean>() {
+
+    }
+
+    @Override
+    public void seconed(String url) {
+
+    }
+
+    @Override
+    public void mapData(Map<String, String> map) {
+        modelImp.getSplendData(map,new NetWorkCallBack<SplendBean>() {
             @Override
             public void onSuccess(SplendBean splendBean) {
-              //  splendidView.dimissProgress();
+                //  splendidView.dimissProgress();
                 splendidView.setResultData(splendBean);
             }
 
@@ -34,10 +46,5 @@ public class SplendidPresenter implements SplendidContract.SplendidPresenter {
 
             }
         });
-    }
-
-    @Override
-    public void seconed(String url) {
-
     }
 }

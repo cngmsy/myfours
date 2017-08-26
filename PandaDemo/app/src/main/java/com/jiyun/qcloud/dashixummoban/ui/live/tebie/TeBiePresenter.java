@@ -4,6 +4,8 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
+import java.util.Map;
+
 /**
  * Created by my301s on 2017/8/25.
  */
@@ -21,10 +23,20 @@ public class TeBiePresenter implements TeBieContract.TeBiePresenter {
     @Override
     public void start() {
       //  teBieView.showProgress();
-        pandaHomeModel.getTeBie(new NetWorkCallBack<SplendBean>() {
+
+    }
+
+    @Override
+    public void seconed(String url) {
+
+    }
+
+    @Override
+    public void mapData(Map<String, String> map) {
+        pandaHomeModel.getTeBie(map,new NetWorkCallBack<SplendBean>() {
             @Override
             public void onSuccess(SplendBean splendBean) {
-               // teBieView.dimissProgress();
+                // teBieView.dimissProgress();
                 teBieView.getResultdata(splendBean);
             }
 
@@ -38,10 +50,5 @@ public class TeBiePresenter implements TeBieContract.TeBiePresenter {
 
             }
         });
-    }
-
-    @Override
-    public void seconed(String url) {
-
     }
 }
