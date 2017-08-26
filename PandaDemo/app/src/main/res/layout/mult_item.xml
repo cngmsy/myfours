@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="100dp"
+    android:layout_height="100dp">
+
+    <RelativeLayout
+        android:layout_width="100dp"
+        android:layout_height="70dp">
+        <ImageView
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/def_no_iv"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:id="@+id/mult_image"/>
+        <ImageView
+            android:layout_marginBottom="8dp"
+            android:layout_width="100dp"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/default_time_view"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/lpanda_live_layer"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="13dp"/>
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mult_name"/>
+
+</LinearLayout>
