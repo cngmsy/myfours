@@ -1,6 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.ui.observation;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,6 +19,7 @@ import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.Bobao.Bo;
 import com.jiyun.qcloud.dashixummoban.entity.Bobao.Bolist;
+import com.jiyun.qcloud.dashixummoban.ui.observation.bobaoxiang.BoxiangActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,24 +93,26 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
 
     @Override
     public void showBoData(Bo bo) {
+
         presenter.seconed(bo.getData().getListurl());
-       /* List<Bo.DataBean.BigImgBean> list2 = new ArrayList<>();
-        for (int i = 0; i < list2.size(); i++) {
-            image = list2.get(i).getImage();
-            title = list2.get(i).getTitle();
-            Glide.with(boHeaderimage.getContext()).load(image).into(boHeaderimage);
-            boHeadercontext.setText(title);
+       List<Bo.DataBean.BigImgBean> list2 = new ArrayList<>();
+            Glide.with(boHeaderimage.getContext()).load(bo.getData().getBigImg().get(0).getImage()).into(boHeaderimage);
+            boHeadercontext.setText(bo.getData().getBigImg().get(0).getTitle());
             handler.sendEmptyMessage(1);
-        }*/
     }
 
     @Override
-    public void showBoListData(List<Bolist.ListBean> list) {
+    public void showBoListData(final List<Bolist.ListBean> list) {
         bolist.addAll(list);
-        Glide.with(getContext()).load(list.get(0).getPicurl()).into(boHeaderimage);
-        boHeadercontext.setText(list.get(0).getTitle());
         handler.sendEmptyMessage(1);
-
+        adapter.setOnItemClickLinear(new BoAdapter.OnItemClickLinear() {
+            @Override
+            public void onItemvlick(int position) {
+                Intent intent = new Intent(getContext(), BoxiangActivity.class);
+                intent.putExtra("url",list.get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+        });
     }
     @Override
     public void listener() {

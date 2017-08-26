@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jiyun.qcloud.dashixummoban">
-    <!--vitamio-->
+
+    <!-- vitamio -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:name=".app.App"
         android:allowBackup="true"
@@ -20,18 +22,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".main.MainActivity" />
+        <activity android:name=".main.WelComeActivity" />
 
-        <activity android:name=".main.MainActivity"/>
-        <activity android:name=".main.WelComeActivity"/>
-
-
-        <!--vitamio-->
+        <!-- vitamio -->
         <activity
             android:name="io.vov.vitamio.activity.InitActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
             android:launchMode="singleTop"
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
+        <activity android:name=".ui.observation.bobaoxiang.BoxiangActivity" />
+        <activity android:name=".ui.culture.gungunxiang.GunxiangActivity"></activity>
     </application>
 
 </manifest>

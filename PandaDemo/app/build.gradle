@@ -46,5 +46,5 @@ dependencies {
     compile 'fm.jiecao:jiecaovideoplayer:2.0'
     compile 'com.jude:rollviewpager:1.2.9'
     compile 'com.androidkun:pulltorefreshrecyclerview:1.0.6'
-
+    compile 'fm.jiecao:jiecaovideoplayer:2.0'
 }
