@@ -1,7 +1,11 @@
 package com.jiyun.qcloud.dashixummoban.ui.home;
 
 
+import android.util.Log;
+
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.IPandaHomeModel;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
@@ -29,15 +33,44 @@ public class HomePresenter implements HomeContract.Presenter {
         homeView.showProgress();
         homeModel.loadHomeList(new NetWorkCallBack<PandaHome>() {
             @Override
-            public void onSuccess(PandaHome pandaHome) {
-                homeView.showHomeListData(pandaHome);
-                homeView.dimissProgress();
+            public void onSuccess(final PandaHome pandaHome) {
+               homeModel.loadJingCaiList(new NetWorkCallBack<WonderfulBean>() {
+                   @Override
+                   public void onSuccess(final WonderfulBean wonderfulBean) {
+                       homeModel.loadGunGunList(new NetWorkCallBack<BillowingBean>() {
+                           @Override
+                           public void onSuccess(BillowingBean billowingBean) {
+                               homeView.showHomeListData(pandaHome,wonderfulBean,billowingBean);
+                           }
+
+                           @Override
+                           public void onError(int errorCode, String errorMsg) {
+
+                           }
+
+                           @Override
+                           public void onFail(String netOff) {
+
+                           }
+                       });
+                   }
+
+                   @Override
+                   public void onError(int errorCode, String errorMsg) {
+
+                   }
+
+                   @Override
+                   public void onFail(String netOff) {
+
+                   }
+               });
             }
 
             @Override
             public void onError(int errorCode, String errorMsg) {
-                homeView.showMessage(errorMsg);
-                homeView.dimissProgress();
+                    homeView.showMessage(errorMsg);
+                Log.e("TAG-----",errorMsg.toString());
             }
 
             @Override

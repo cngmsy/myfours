@@ -11,7 +11,7 @@ import com.orhanobut.logger.Logger;
  * Created by chj on 2017/8/20.
  */
 
-public class FragmentMager {
+public class  FragmentMager {
     private static FragmentMager fragmentMager;
     private android.support.v4.app.FragmentManager fragmentManager;
     private BaseFragment fragment;

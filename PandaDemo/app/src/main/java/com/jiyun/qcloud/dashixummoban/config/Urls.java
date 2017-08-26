@@ -9,8 +9,12 @@ public class Urls {
 
     //服务器地址
     private static final String BASEURL = "http://www.ipanda.com/kehuduan/";
-    //首页轮播
-    private static final String HOMELUN=BASEURL+"shouye/index.json";
+    //首页精彩一刻http://www.ipanda.com/kehuduan/shipinliebieye/video/index.json
+    public static final String WONDERFUL = BASEURL+"shipinliebieye/jingcaiyike/index.json";
+    //首页滚滚视频
+    public static final String  BILLOWING = BASEURL+"shipinliebieye/video/index.json";
+    //首页总接口
+    public static final String HOMELUN = BASEURL+"shouye/index.json";
     //首页
     public static final String PANDAHOME = BASEURL+"PAGE14501749764071042/index.json";
     //熊猫直播
