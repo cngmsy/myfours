@@ -62,7 +62,6 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
         homerecycler.addHeaderView(headview);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         homerecycler.setLayoutManager(manager);
-
     }
 
     @Override
@@ -126,8 +125,6 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
         List<BillowingBean.ListBean> billowingBeanList = billowingBean.getList();
         adapter = new HomeAdapter(getActivity(),pandaShouYes,wonderfulBeanList,billowingBeanList);
         homerecycler.setAdapter(adapter);
-
-
     }
 
     @Override

@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.jiyun.qcloud.dashixummoban.ui.live.panda_live.fragment.MultiFragment">
+
+    <GridView
+        android:numColumns="3"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
+        android:id="@+id/multi_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </GridView>
+
+</FrameLayout>
