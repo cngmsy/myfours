@@ -5,7 +5,9 @@ import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.BigLiveBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.LiveVideoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaVideoBean;
@@ -52,4 +54,8 @@ public interface IPandaHomeModel extends BaseModel {
     void getNews(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
 
     void getVideoData(String url,NetWorkCallBack<PandaVideoBean> callBack);
+
+    void getPandaVideoData(String url,NetWorkCallBack<LiveVideoBean> callBack);
+
+    void getLivaPage(NetWorkCallBack<BigLiveBean> callBack);
 }

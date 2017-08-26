@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.View;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
@@ -48,7 +47,6 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
             }
         }
     };
-
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_splendid;
@@ -56,8 +54,11 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
 
     @Override
     protected void initData() {
+        Bundle bundle = getArguments();
+        String vsid = bundle.getString("vsid");
+
         splendidPresenter = new SplendidPresenter(this);
-        map.put("vsid","VSET100167216881");
+        map.put("vsid",vsid);
         map.put("n","7");
         map.put("serviceId","panda");
         map.put("o","desc");

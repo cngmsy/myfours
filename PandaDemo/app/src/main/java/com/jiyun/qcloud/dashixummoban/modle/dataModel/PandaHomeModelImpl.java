@@ -6,7 +6,9 @@ import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.BigLiveBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.LiveVideoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaVideoBean;
@@ -113,4 +115,13 @@ public class  PandaHomeModelImpl implements IPandaHomeModel {
         HttpFactory.createOK().get(url,null,callBack);
     }
 
+    @Override
+    public void getPandaVideoData(String url, NetWorkCallBack<LiveVideoBean> callBack) {
+        HttpFactory.createOK().get(url,null,callBack);
+    }
+
+    @Override
+    public void getLivaPage(NetWorkCallBack<BigLiveBean> callBack) {
+        HttpFactory.createOK().get(Urls.BIGPAGE,null,callBack);
+    }
 }
