@@ -1,12 +1,13 @@
 package com.jiyun.qcloud.dashixummoban.entity.china;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by liuwangping on 2017/8/23.
  */
 
-public class ChinaTabBean {
+public class ChinaTabBean implements Serializable{
     private List<TablistBean> tablist;
     private List<AlllistBean> alllist;
 
@@ -26,7 +27,7 @@ public class ChinaTabBean {
         this.alllist = alllist;
     }
 
-    public static class TablistBean {
+    public static class TablistBean implements Serializable{
         /**
          * title : 八达岭
          * url : http://www.ipanda.com/kehuduan/liebiao/badaling/index.json
@@ -72,7 +73,7 @@ public class ChinaTabBean {
         }
     }
 
-    public static class AlllistBean {
+    public static class AlllistBean implements Serializable{
         /**
          * title : 凤凰古城
          * url : http://www.ipanda.com/kehuduan/liebiao/fenghuanggucheng/index.json

@@ -34,6 +34,9 @@ public class ChinaItemFragment extends BaseFragment implements ChinaFragContract
         this.url = url;
     }
 
+    public ChinaItemFragment() {
+    }
+
     @Override
     protected int getLayoutRes() {
         return R.layout.fragment_chinaitem;
