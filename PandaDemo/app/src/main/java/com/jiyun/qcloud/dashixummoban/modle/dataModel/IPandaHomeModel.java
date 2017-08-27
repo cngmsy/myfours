@@ -12,6 +12,7 @@ import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaVideoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
+import com.jiyun.qcloud.dashixummoban.entity.share.ShareBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
 import java.util.Map;
@@ -28,8 +29,6 @@ public interface IPandaHomeModel extends BaseModel {
     //进行滚滚视频
     void loadGunGunList(NetWorkCallBack<BillowingBean> callback);
 
-
-
     void getPandaLive(NetWorkCallBack<PandaLiveBean> callBack);
 
     void getMultiData(NetWorkCallBack<MultiBean> callBack);
@@ -39,23 +38,11 @@ public interface IPandaHomeModel extends BaseModel {
 
     void getSplendData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
 
-    void getDangXiongData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
-
-    void getChaoMengData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
-
-    void getDangAn(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
-
-    void getTop(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
-
-    void getNaXie(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
-
-    void getTeBie(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
-
-    void getNews(Map<String,String> map,NetWorkCallBack<SplendBean> callBack);
-
     void getVideoData(String url,NetWorkCallBack<PandaVideoBean> callBack);
 
     void getPandaVideoData(String url,NetWorkCallBack<LiveVideoBean> callBack);
 
     void getLivaPage(NetWorkCallBack<BigLiveBean> callBack);
+
+    void getShareData(NetWorkCallBack<ShareBean> callBack);
 }

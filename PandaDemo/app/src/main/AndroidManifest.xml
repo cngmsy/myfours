@@ -24,7 +24,8 @@
         <activity android:name=".main.WelComeActivity" />
         <activity android:name=".ui.live.detail_video.PandaVideoActivity" />
         <activity android:name=".activity.PersonActivity" />
-        <activity android:name=".activity.ShareActivity"></activity>
+        <activity android:name=".activity.ShareActivity" />
+        <activity android:name=".activity.ShareDetailActivity"></activity>
     </application>
 
 </manifest>
