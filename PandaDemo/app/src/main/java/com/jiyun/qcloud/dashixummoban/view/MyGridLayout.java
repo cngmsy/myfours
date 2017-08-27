@@ -9,7 +9,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.jiyun.qcloud.dashixummoban.R;
+import com.jiyun.qcloud.dashixummoban.app.App;
+import com.jiyun.qcloud.dashixummoban.entity.china.EventDragFalse;
+import com.jiyun.qcloud.dashixummoban.entity.china.EventDragTrue;
+
+import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -21,7 +28,7 @@ public class MyGridLayout extends GridLayout {
     private View mDragedView;//被拖拽的view
     private int mMargin =10;
     private boolean mDragAble;
-
+    private int count;
     /**
      * 在代码中new对象是会调用；
      * @param context
@@ -51,6 +58,7 @@ public class MyGridLayout extends GridLayout {
         super(context, attrs, defStyleAttr);
         setColumnCount(3);//初始化当前Gridlayout的条目个数
         setLayoutTransition(new LayoutTransition());   // 设置 GridLayout 中的条目增加过渡动画
+
     }
 
     /**
@@ -58,9 +66,9 @@ public class MyGridLayout extends GridLayout {
      *
      * @param list
      */
-    public void setItems(List<String> list) {
+    public void setAddList(List<String> list) {
         for (String strItem : list) {
-            addItem(strItem);
+            addTvItem(strItem);
         }
     }
     //定义接口回调
@@ -76,7 +84,7 @@ public class MyGridLayout extends GridLayout {
      *
      * @param strItem
      */
-    public void addItem(String strItem) {
+    public void addTvItem(String strItem) {
         TextView tv = new TextView(getContext());
         GridLayout.LayoutParams lp = new GridLayout.LayoutParams();
         lp.width = getResources().getDisplayMetrics().widthPixels /3 - mMargin * 2;
@@ -96,12 +104,38 @@ public class MyGridLayout extends GridLayout {
                 }
             }
         });
+        count++;
         // 可以拖拽
         if (mDragAble) {
             tv.setOnLongClickListener(ocl);
-            // 不能拖拽
-        } else {
+            tv.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    TextView textView= (TextView) v;
+                    if (count>4){
+                        EventBus.getDefault().post(new EventDragTrue(textView.getText().toString().trim()));
+                        removeView(v);
+                        count=count-1;
+
+                    }else {
+
+                                Toast.makeText(App.mBaseActivity, "栏目区，不能少于四个频道", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                }
+            });
+        } else {// 不能拖拽
             tv.setOnLongClickListener(null);
+           tv.setOnClickListener(new OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    TextView textView= (TextView) v;
+                    EventBus.getDefault().post(new EventDragFalse(textView.getText().toString().trim()));
+                    count=count+1;
+                    removeView(v);
+                }
+            });
         }
 
     }
@@ -142,8 +176,8 @@ public class MyGridLayout extends GridLayout {
         public boolean onDrag(View arg0, DragEvent event) {
 
             switch (event.getAction()) {
-                // 开始拖拽
                 case DragEvent.ACTION_DRAG_STARTED:
+                    //当拖拽事件产生时，给每个子控件创建出对应的矩形
                     initRect();
                     break;
                 // 实时监听拖拽事件// 开始拖拽控件后，移动控件或者是拖拽控件执行的操作
@@ -173,7 +207,7 @@ public class MyGridLayout extends GridLayout {
     private Rect[] mRectArr;
     // 将所有的条目都封装成矩形然后存入数组
     private void initRect() {
-        //getChildCount() :  获取 Gridlayout 的子控件的个数
+        //getChildCount() : 获取 Gridlayout 的子控件的个数
         int childViewCount = getChildCount();
         mRectArr = new Rect[childViewCount];
         // 根据孩子的个数，创建相应个数的矩形

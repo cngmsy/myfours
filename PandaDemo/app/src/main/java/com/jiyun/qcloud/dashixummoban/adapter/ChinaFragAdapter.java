@@ -44,7 +44,7 @@ public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean>{
 
         ImageView img=holder.itemView.findViewById(R.id.look_img);
         Glide.with(context).load(liveBean.getImage()).into(img);
-
+        String url = "http://vdn.live.cntv.cn/api2/live.do?channel=pa://cctv_p2p_hd" + liveBean.getId() + "&client=androidapp";
 
     }
 }

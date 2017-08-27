@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/add_Linearlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y80">
+        <ImageView
+            android:id="@+id/add_back"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_centerVertical="true"
+            android:src="@drawable/live_china_delect_channel"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y100">
+        <TextView
+            android:layout_centerVertical="true"
+            android:textColor="@color/baise"
+            android:layout_marginLeft="@dimen/x20"
+            android:textSize="20sp"
+            android:text="切换栏目"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/add_bianji"
+            android:layout_margin="@dimen/x20"
+            android:text="编辑"
+            android:textSize="16sp"
+            android:background="@color/white_fafaf8"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="长按拖动可以排序"
+            android:visibility="gone"
+            android:textColor="@color/white_fafaf8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/x200"
+            android:layout_marginStart="@dimen/x200"
+            android:layout_marginTop="@dimen/y36"
+            android:id="@+id/hideText" />
+    </RelativeLayout>
+
+    <com.jiyun.qcloud.dashixummoban.view.MyGridLayout
+        android:id="@+id/add_top_mygridlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_centerVertical="true"
+        android:textColor="@color/baise"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:text="点击添加更多栏目"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.jiyun.qcloud.dashixummoban.view.MyGridLayout
+        android:id="@+id/add_bottom_mygridlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
