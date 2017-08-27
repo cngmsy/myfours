@@ -1,9 +1,10 @@
 package com.jiyun.qcloud.dashixummoban.ui.live.panda_live.fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.jiyun.qcloud.dashixummoban.R;
@@ -16,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A simple {@link Fragment} subclass.
+ *
  */
 public class MultiFragment extends BaseFragment implements MultiContract.MultiView{
 
@@ -70,5 +71,15 @@ public class MultiFragment extends BaseFragment implements MultiContract.MultiVi
         list.addAll(resultData.getList());
         MultiAdapter multiAdapter = new MultiAdapter(getContext(),list);
         multi_grid.setAdapter(multiAdapter);
+
+        multi_grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent();
+                intent.putExtra("listBean", list.get(i));
+                intent.setAction("zlj");
+                getActivity().sendBroadcast(intent);
+            }
+        });
     }
 }

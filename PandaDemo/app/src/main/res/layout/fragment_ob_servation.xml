@@ -4,10 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.observation.ObServationFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="我是熊猫观察" />
+   <com.jcodecraeer.xrecyclerview.XRecyclerView
+       android:id="@+id/obrecycler"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"></com.jcodecraeer.xrecyclerview.XRecyclerView>
 
 </FrameLayout>

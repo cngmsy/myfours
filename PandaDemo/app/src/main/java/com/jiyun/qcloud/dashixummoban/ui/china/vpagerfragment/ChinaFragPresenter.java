@@ -47,4 +47,10 @@ public class ChinaFragPresenter implements ChinaFragContract.Presenter {
             }
         });
     }
+
+    @Override
+    public void seconed(String url) {
+
+    }
+
 }

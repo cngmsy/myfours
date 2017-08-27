@@ -1,5 +1,6 @@
 package com.jiyun.qcloud.dashixummoban.main;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
 import android.view.KeyEvent;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jiyun.qcloud.dashixummoban.R;
+import com.jiyun.qcloud.dashixummoban.activity.PersonActivity;
+import com.jiyun.qcloud.dashixummoban.activity.ShareActivity;
 import com.jiyun.qcloud.dashixummoban.app.App;
 import com.jiyun.qcloud.dashixummoban.base.BaseActivity;
 import com.jiyun.qcloud.dashixummoban.manager.FragmentMager;
@@ -19,7 +22,7 @@ import com.jiyun.qcloud.dashixummoban.ui.china.ChinaPageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.culture.CulturePageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.home.HomePageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.home.HomePresenter;
-import com.jiyun.qcloud.dashixummoban.ui.live.LivePageFragment;
+import com.jiyun.qcloud.dashixummoban.ui.live.big_fragment.LivePageFragment;
 import com.jiyun.qcloud.dashixummoban.ui.observation.ObServationFragment;
 import com.orhanobut.logger.Logger;
 
@@ -64,8 +67,6 @@ public class MainActivity extends BaseActivity {
         HomePageFragment homeFragment = (HomePageFragment) FragmentMager.getInstance().start(R.id.container, HomePageFragment.class, false).build();
         //presenter在这里初始化
         new HomePresenter(homeFragment);
-
-
     }
 
     @Override
@@ -86,9 +87,8 @@ public class MainActivity extends BaseActivity {
                 iconImg.setVisibility(View.VISIBLE);
                 titleTv.setText("");
                 hudongImg.setVisibility(View.VISIBLE);
-                HomePageFragment homePageFragment = (HomePageFragment) FragmentMager.getInstance().start(R.id.container, HomePageFragment.class, false).build();
+                FragmentMager.getInstance().start(R.id.container, HomePageFragment.class, false).build();
                 Logger.d("22222");
-                new HomePresenter(homePageFragment);
                 break;
             case R.id.homePandaLive:
                 iconImg.setVisibility(View.GONE);
@@ -135,6 +135,18 @@ public class MainActivity extends BaseActivity {
                 break;
         }
         return super.onKeyUp(keyCode, event);
+    }
+
+    @OnClick({R.id.personImg, R.id.hudongImg})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.personImg:
+                startActivity( new Intent(MainActivity.this, PersonActivity.class));
+                break;
+            case R.id.hudongImg:
+                startActivity( new Intent(MainActivity.this, ShareActivity.class));
+                break;
+        }
     }
 }
 

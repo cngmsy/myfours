@@ -15,5 +15,5 @@ public class CultureContract {
         void listener();
     }
 
-   interface Presenter extends IBasePresenter{}
+   public interface Presenter extends IBasePresenter{}
 }

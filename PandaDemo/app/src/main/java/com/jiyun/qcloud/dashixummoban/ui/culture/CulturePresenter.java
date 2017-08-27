@@ -46,4 +46,10 @@ public class CulturePresenter implements CultureContract.Presenter{
             }
         });
     }
+
+    @Override
+    public void seconed(String url) {
+
+    }
+
 }

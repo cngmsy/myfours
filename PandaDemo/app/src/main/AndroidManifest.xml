@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jiyun.qcloud.dashixummoban">
-    <!--vitamio-->
+
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -19,9 +23,14 @@
             </intent-filter>
         </activity>
 
+
         <activity android:name=".main.MainActivity"/>
         <activity android:name=".main.WelComeActivity"/>
         <activity android:name=".ui.china.activity.AddActivity" android:theme="@style/fade"/>
+
+        <activity android:name=".ui.live.detail_video.PandaVideoActivity" />
+        <activity android:name=".activity.PersonActivity" />
+        <activity android:name=".activity.ShareActivity"></activity>
 
     </application>
 

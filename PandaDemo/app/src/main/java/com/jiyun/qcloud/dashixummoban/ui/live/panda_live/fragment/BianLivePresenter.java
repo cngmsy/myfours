@@ -40,6 +40,11 @@ public class BianLivePresenter implements BianLiveContract.BianLivePresenter {
     }
 
     @Override
+    public void seconed(String url) {
+
+    }
+
+    @Override
     public void setFasong(String app, String author, String authorid, String data, String itemid, String message) {
         modelImp.getFasongData(app, author, authorid, data, itemid, message, new NetWorkCallBack<FasongBean>() {
             @Override

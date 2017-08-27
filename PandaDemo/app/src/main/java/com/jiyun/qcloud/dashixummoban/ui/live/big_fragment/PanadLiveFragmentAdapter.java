@@ -1,4 +1,4 @@
-package com.jiyun.qcloud.dashixummoban.ui.live;
+package com.jiyun.qcloud.dashixummoban.ui.live.big_fragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
