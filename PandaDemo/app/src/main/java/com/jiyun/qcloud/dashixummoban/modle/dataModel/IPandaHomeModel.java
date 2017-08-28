@@ -28,8 +28,6 @@ public interface IPandaHomeModel extends BaseModel {
     //进行滚滚视频
     void loadGunGunList(NetWorkCallBack<BillowingBean> callback);
 
-
-
     void getPandaLive(NetWorkCallBack<PandaLiveBean> callBack);
 
     void getMultiData(NetWorkCallBack<MultiBean> callBack);

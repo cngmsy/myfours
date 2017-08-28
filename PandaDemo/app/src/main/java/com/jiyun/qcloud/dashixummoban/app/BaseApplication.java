@@ -7,7 +7,6 @@ import android.os.StrictMode;
 import android.support.multidex.MultiDexApplication;
 
 import com.jiyun.qcloud.dashixummoban.manager.ActivityCollector;
-import com.jiyun.qcloud.dashixummoban.view.CrashHandler;
 import com.orhanobut.logger.AndroidLogTool;
 import com.orhanobut.logger.Logger;
 
@@ -28,8 +27,8 @@ public class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         //全局异常捕获
-        CrashHandler crashHandler = CrashHandler.getInstance();
-        crashHandler.init(getApplicationContext());
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(getApplicationContext());
 
         if (Config.DEVELOPER_MORE&& Build.VERSION.SDK_INT<=Build.VERSION_CODES.GINGERBREAD) {
             //设置线程的严苛模式

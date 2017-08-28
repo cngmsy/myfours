@@ -26,7 +26,6 @@
 
         <activity android:name=".main.MainActivity"/>
         <activity android:name=".main.WelComeActivity"/>
-        <activity android:name=".ui.china.activity.AddActivity" android:theme="@style/fade"/>
 
         <activity android:name=".ui.live.detail_video.PandaVideoActivity" />
         <activity android:name=".activity.PersonActivity" />

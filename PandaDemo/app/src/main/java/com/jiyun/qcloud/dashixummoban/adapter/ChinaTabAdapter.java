@@ -35,8 +35,5 @@ public class ChinaTabAdapter extends FragmentStatePagerAdapter {
         return list.get(position);
     }
 
-    @Override
-    public int getItemPosition(Object object) {
-        return fragments.size();
-    }
+
 }
