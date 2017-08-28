@@ -25,7 +25,6 @@ public class ChinaFragmentBean {
          * id : bgws4
          * order : 1
          */
-
         private String title;
         private String brief;
         private String image;

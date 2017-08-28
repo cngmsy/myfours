@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/share_it_background"
+    tools:context="com.jiyun.qcloud.dashixummoban.activity.ShareActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:id="@+id/sha_back"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:src="@mipmap/personal_back_img"
+            android:padding="3dp"
+            android:layout_margin="3dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/baise"
+            android:text="原创-互动"
+            android:layout_alignParentTop="true" />
+    </RelativeLayout>
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/share_srv"/>
+
+</LinearLayout>

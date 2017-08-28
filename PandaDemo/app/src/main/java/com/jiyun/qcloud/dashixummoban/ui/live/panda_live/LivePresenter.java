@@ -2,6 +2,7 @@ package com.jiyun.qcloud.dashixummoban.ui.live.panda_live;
 
 import android.util.Log;
 
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.LiveVideoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.modle.dataModel.PandaHomeModelImpl;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
@@ -41,5 +42,26 @@ public class LivePresenter implements LiveContract.LivePresenter {
     @Override
     public void seconed(String url) {
 
+    }
+
+
+    @Override
+    public void setURL(String url) {
+        modelImp.getPandaVideoData(url, new NetWorkCallBack<LiveVideoBean>() {
+            @Override
+            public void onSuccess(LiveVideoBean liveVideoBean) {
+                liveView.setUrlurl(liveVideoBean);
+            }
+
+            @Override
+            public void onError(int errorCode, String errorMsg) {
+
+            }
+
+            @Override
+            public void onFail(String netOff) {
+
+            }
+        });
     }
 }

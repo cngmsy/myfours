@@ -20,6 +20,13 @@ import java.util.List;
 public class CuAdapter extends RecyclerView.Adapter<CuAdapter.ViewHolder>{
     Context context;
     List<Gun.ListBean> mList;
+    private OnItemClickLinear onItemClickLinear;
+    public void setOnItemClickLinear(OnItemClickLinear onItemClickLinear) {
+        this.onItemClickLinear = onItemClickLinear;
+    }
+    public interface OnItemClickLinear {
+        public void onItemvlick(int position);
+    }
     public CuAdapter(Context context, List<Gun.ListBean> mList) {
         this.context = context;
         this.mList = mList;
@@ -33,13 +40,20 @@ public class CuAdapter extends RecyclerView.Adapter<CuAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
          Gun.ListBean gun = mList.get(position);
-
         holder.item_title.setText(gun.getTitle());
         holder.item_contex.setText(gun.getBrief());
         holder.item_time.setText(gun.getVideoLength());
         Glide.with(holder.item_image.getContext()).load(gun.getImage()).into(holder.item_image);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (onItemClickLinear != null) {
+                    onItemClickLinear.onItemvlick(position);
+                }
+            }
+        });
     }
 
     @Override

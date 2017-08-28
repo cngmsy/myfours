@@ -5,9 +5,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.multidex.MultiDexApplication;
+
 import com.jiyun.qcloud.dashixummoban.manager.ActivityCollector;
 import com.orhanobut.logger.AndroidLogTool;
 import com.orhanobut.logger.Logger;
+import com.umeng.socialize.PlatformConfig;
+import com.umeng.socialize.UMShareAPI;
 
 /**
  * Created by chj on 2017/8/20.
@@ -19,12 +22,22 @@ import com.orhanobut.logger.Logger;
  */
 
 public class BaseApplication extends MultiDexApplication {
+    public static final String UPDATE_STATUS_ACTION = "com.umeng.message.example.action.UPDATE_STATUS";
     public static class Config{
         public static final boolean DEVELOPER_MORE=false;
     }
     @Override
     public void onCreate() {
         super.onCreate();
+        UMShareAPI.get(this);
+        //全局异常捕获
+
+
+
+//        CrashHandler crashHandler = CrashHandler.getInstance();
+//        crashHandler.init(getApplicationContext());
+
+
         if (Config.DEVELOPER_MORE&& Build.VERSION.SDK_INT<=Build.VERSION_CODES.GINGERBREAD) {
             //设置线程的严苛模式
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyDialog().build());
@@ -88,5 +101,11 @@ public class BaseApplication extends MultiDexApplication {
     //退出整个应用
     public void exit(){
         ActivityCollector.getInstance().exit(this);
+    }
+
+    {
+        PlatformConfig.setWeixin("wx967daebe835fbeac", "5bb696d9ccd75a38c8a0bfe0675559b3");
+        PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
+        PlatformConfig.setSinaWeibo("2828143782", "9056270e0000507b476d6c229f29c340", "http://sns.whalecloud.com");
     }
 }

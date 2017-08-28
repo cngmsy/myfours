@@ -1,12 +1,13 @@
 package com.jiyun.qcloud.dashixummoban.entity.Bobao;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/8/24.
  */
 
-public class Bolist {
+public class Bolist implements Serializable{
 
     /**
      * total : 76
@@ -32,7 +33,7 @@ public class Bolist {
         this.list = list;
     }
 
-    public static class ListBean {
+    public static class ListBean implements Serializable{
         /**
          * num : 1
          * datatype : article

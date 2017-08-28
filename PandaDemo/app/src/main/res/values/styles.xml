@@ -19,4 +19,9 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+
+    <style name="fade" >
+        <item name="android:windowEnterAnimation">@anim/in_from_right</item>
+        <item name="android:windowExitAnimation">@anim/out_to_right</item>
+    </style>
 </resources>

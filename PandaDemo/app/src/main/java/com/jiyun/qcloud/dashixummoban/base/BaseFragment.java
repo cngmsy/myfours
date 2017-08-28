@@ -11,6 +11,7 @@ import com.jiyun.qcloud.dashixummoban.app.App;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.vov.vitamio.Vitamio;
 
 /**
  * Created by chj on 2017/8/20.

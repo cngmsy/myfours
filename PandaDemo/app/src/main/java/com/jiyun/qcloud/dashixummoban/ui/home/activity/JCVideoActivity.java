@@ -12,13 +12,11 @@ import com.jiyun.qcloud.dashixummoban.ui.home.videoprestener.VideoPresenter;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import fm.jiecao.jcvideoplayer_lib.JCFullScreenActivity;
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard;
 
 public class JCVideoActivity extends BaseActivity implements VideoContract.View{
 
-    private JCVideoPlayerStandard jcvView;
+    private JCVideoPlayer jcvView;
     private VideoContract.Presenter presenter;
     private String url;
 
@@ -31,7 +29,7 @@ public class JCVideoActivity extends BaseActivity implements VideoContract.View{
     protected void initView() {
         new VideoPresenter(this);
         ButterKnife.bind(this);
-        jcvView = (JCVideoPlayerStandard) findViewById(R.id.jcv_view);
+        jcvView = (JCVideoPlayer) findViewById(R.id.jcv_view);
         Intent intent = getIntent();
         url = intent.getStringExtra("url");
         presenter.start();
@@ -78,10 +76,6 @@ public class JCVideoActivity extends BaseActivity implements VideoContract.View{
         String url = chapters2Bean.getUrl();
         String title = movieBean.getTitle();
         jcvView.setUp(url,title);
-        JCFullScreenActivity.startActivity(this,
-                url,
-               JCVideoPlayerStandard.class,
-                title);
 
         /**
          * 设置为横屏

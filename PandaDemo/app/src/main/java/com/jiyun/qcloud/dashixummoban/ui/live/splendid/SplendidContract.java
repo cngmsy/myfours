@@ -4,6 +4,8 @@ import com.jiyun.qcloud.dashixummoban.base.IBasePresenter;
 import com.jiyun.qcloud.dashixummoban.base.IBaseView;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 
+import java.util.Map;
+
 
 public interface SplendidContract {
 
@@ -12,6 +14,7 @@ public interface SplendidContract {
     }
 
     interface SplendidPresenter extends IBasePresenter {
+        void mapData(Map<String,String> map);
 
     }
 }

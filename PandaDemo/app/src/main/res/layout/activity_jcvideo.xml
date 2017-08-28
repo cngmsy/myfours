@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.home.JCVideoActivity">
-     <fm.jiecao.jcvideoplayer_lib.JCVideoPlayerStandard
+     <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
          android:id="@+id/jcv_view"
          android:layout_width="match_parent"
          android:layout_height="match_parent" />

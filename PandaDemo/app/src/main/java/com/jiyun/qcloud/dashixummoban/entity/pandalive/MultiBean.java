@@ -1,5 +1,6 @@
 package com.jiyun.qcloud.dashixummoban.entity.pandalive;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -18,7 +19,7 @@ public class MultiBean {
         this.list = list;
     }
 
-    public static class ListBean {
+    public static class ListBean implements Serializable{
         /**
          * url :
          * image : http://p1.img.cctvpic.com/photoAlbum/page/performance/img/2017/6/14/1497428381378_816.jpg

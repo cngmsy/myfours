@@ -84,4 +84,6 @@ public class HomePresenter implements HomeContract.Presenter {
     public void seconed(String url) {
 
     }
+
+
 }

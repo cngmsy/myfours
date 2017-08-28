@@ -40,20 +40,13 @@ public class Urls {
     public static final String BOBAO = BASEURL + "news/index.json";
     public static final String BOBAOList = "http://api.cntv.cn/apicommon/index?path=iphoneInterface/general/getArticleAndVideoListInfo.json&primary_id=PAGE1422435191506336&serviceId=panda";
     //精彩一刻
-    public static final String SPLENDURL = "http://api.cntv.cn/video/videolistById?vsid=VSET100167216881&n=7&serviceId=panda&o=desc&of=time&p=1";
-    //当熊不让
-    public static final String DANGXIONG = "http://api.cntv.cn/video/videolistById?vsid=VSET100332640004&n=7&serviceId=panda&o=desc&of=time&p=1";
+    public static final String SPLENDURL = "http://api.cntv.cn/video/videolistById";
 
-    //超萌滚滚
-    public static final String CHAOMENG = "http://api.cntv.cn/video/videolistById?vsid=VSET100272959126&n=7&serviceId=panda&o=desc&of=time&p=1";
-    //熊猫档案
-    public static final String DANGAN = "http://api.cntv.cn/video/videolistById?vsid=VSET100340574858&n=7&serviceId=panda&o=desc&of=time&p=1";
-    //熊猫TOP榜
-    public static final String TOP = "http://api.cntv.cn/video/videolistById?vsid=VSET100284428835&n=7&serviceId=panda&o=desc&of=time&p=1";
-    //熊猫那些事
-    public static final String NAXIE = "http://api.cntv.cn/video/videolistById?vsid=VSET100237714751&n=7&serviceId=panda&o=desc&of=time&p=1";
-    //特别节目
-    public static final String TEBIE = "http://api.cntv.cn/video/videolistById?vsid=VSET100167308855&n=7&serviceId=panda&o=desc&of=time&p=1";
-    //原创新闻
-    public static final String NEWS = "http://api.cntv.cn/video/videolistById?vsid=VSET100219009515&n=7&serviceId=panda&o=desc&of=time&p=1";
+
+    public static final String GunGunVIDEO = "http://115.182.35.91/api/getVideoInfoForCBox.do";
+
+    public static final String BIGPAGE = "http://www.ipanda.com/kehuduan/PAGE14501772263221982/index.json";
+
+    public static final String SHARE="http://www.ipanda.com/kehuduan/PAGE14501767715521482/index.json";
+
 }
