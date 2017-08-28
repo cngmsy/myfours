@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
 /**
  * Created by liuwangping on 2017/8/24.
@@ -32,6 +33,9 @@ public class ChinaItemFragment extends BaseFragment implements ChinaFragContract
 
     public ChinaItemFragment(String url) {
         this.url = url;
+    }
+
+    public ChinaItemFragment() {
     }
 
     @Override
@@ -106,6 +110,12 @@ public class ChinaItemFragment extends BaseFragment implements ChinaFragContract
     @Override
     public void showMessage(String msg) {
 
+    }
+//往上滑的时候自动停
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        JCVideoPlayer.releaseAllVideos();
     }
 
     @Override

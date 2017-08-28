@@ -6,11 +6,14 @@ import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.BigLiveBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.LiveVideoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaVideoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
+import com.jiyun.qcloud.dashixummoban.entity.share.ShareBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.HttpFactory;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
@@ -74,43 +77,23 @@ public class  PandaHomeModelImpl implements IPandaHomeModel {
     }
 
     @Override
-    public void getDangXiongData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
-        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
-    }
-
-    @Override
-    public void getChaoMengData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
-        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
-    }
-
-    @Override
-    public void getDangAn(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
-        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
-    }
-
-    @Override
-    public void getTop(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
-        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
-    }
-
-    @Override
-    public void getNaXie(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
-        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
-    }
-
-    @Override
-    public void getTeBie(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
-        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
-    }
-
-    @Override
-    public void getNews(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
-        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
-    }
-
-    @Override
     public void getVideoData(String url, NetWorkCallBack<PandaVideoBean> callBack) {
         HttpFactory.createOK().get(url,null,callBack);
+    }
+
+    @Override
+    public void getPandaVideoData(String url, NetWorkCallBack<LiveVideoBean> callBack) {
+        HttpFactory.createOK().get(url,null,callBack);
+    }
+
+    @Override
+    public void getLivaPage(NetWorkCallBack<BigLiveBean> callBack) {
+        HttpFactory.createOK().get(Urls.BIGPAGE,null,callBack);
+    }
+
+    @Override
+    public void getShareData(NetWorkCallBack<ShareBean> callBack) {
+        iHttp.get(Urls.SHARE,null,callBack);
     }
 
 }

@@ -28,22 +28,23 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
     private List<SplendBean.VideoBean> beanList = new ArrayList<>();
     private SplendAdapter splendAdapter;
     private int Index = 1;
-    Map<String,String> map=new HashMap<>();
+    Map<String, String> map = new HashMap<>();
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             switch (msg.what) {
                 case 2:
-                    Index++;
-                    initData();
-                    xRecyclerView.refreshComplete();
+                    beanList.clear();
                     splendAdapter.notifyDataSetChanged();
+                    xRecyclerView.refreshComplete();
+                    Index=1;
+                    initData();
                     break;
                 case 3:
-                    Index=1;
                     xRecyclerView.loadMoreComplete();
-                    splendAdapter.notifyDataSetChanged();
+                    Index++;
+                    initData();
                     break;
             }
         }
@@ -56,13 +57,17 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
 
     @Override
     protected void initData() {
+        Bundle bundle = getArguments();
+        String vsid = bundle.getString("vsid");
+
         splendidPresenter = new SplendidPresenter(this);
-        map.put("vsid","VSET100167216881");
-        map.put("n","7");
-        map.put("serviceId","panda");
-        map.put("o","desc");
-        map.put("of","time");
-        map.put("p",Index+"");
+        map.put("vsid", vsid);
+        map.put("n", "7");
+        map.put("serviceId", "panda");
+        map.put("o", "desc");
+        map.put("of", "time");
+        map.put("p", Index + "");
+        Log.d("SplendidFragment", "Index:" + Index);
         splendidPresenter.mapData(map);
     }
 
@@ -79,11 +84,12 @@ public class SplendidFragment extends BaseFragment implements SplendidContract.S
         xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-               handler.sendEmptyMessageDelayed(2,1000);
+                handler.sendEmptyMessageDelayed(2, 1000);
             }
+
             @Override
             public void onLoadMore() {
-                handler.sendEmptyMessageDelayed(3,2000);
+                handler.sendEmptyMessageDelayed(3, 2000);
             }
         });
     }

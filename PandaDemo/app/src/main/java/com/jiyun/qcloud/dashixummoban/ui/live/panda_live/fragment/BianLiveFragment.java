@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
@@ -34,15 +35,22 @@ public class BianLiveFragment extends BaseFragment implements BianLiveContract.B
     private XREAdapter adapter;
     private SharedPreferences sp;
     private ArrayList<BiankanBianliaoBean.DataBean.ContentBean> list = new ArrayList<>();
-    private Handler handler = new Handler() {
+
+    private Handler handler=new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            switch (msg.what) {
-                case 111:
+            switch (msg.what){
+
+                case 2:
+                    initData();
+                    biankan_xrecyclerview.refresh();
                     adapter.notifyDataSetChanged();
                     break;
-
+                case 3:
+                    biankan_xrecyclerview.loadMoreComplete();
+                    adapter.notifyDataSetChanged();
+                    break;
             }
         }
     };
@@ -69,16 +77,20 @@ public class BianLiveFragment extends BaseFragment implements BianLiveContract.B
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
         layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         biankan_xrecyclerview.setLayoutManager(layoutManager);
+        biankan_xrecyclerview.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
+        biankan_xrecyclerview.setArrowImageView(R.drawable.iconfont_downgrey);
+        biankan_xrecyclerview.setLoadingMoreProgressStyle(ProgressStyle.Pacman);
 
         biankan_xrecyclerview.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                biankan_xrecyclerview.refresh();
+                handler.sendEmptyMessageDelayed(2,1500);
             }
 
             @Override
             public void onLoadMore() {
-                biankan_xrecyclerview.loadMoreComplete();
+                handler.sendEmptyMessageDelayed(2,1500);
+                initData();
             }
         });
         adapter = new XREAdapter(list, getActivity());
@@ -114,7 +126,7 @@ public class BianLiveFragment extends BaseFragment implements BianLiveContract.B
     public void setResultData(BiankanBianliaoBean resultData) {
         list.addAll(resultData.getData().getContent());
         Log.e("TG", list.get(0).getMessage());
-        handler.sendEmptyMessage(111);
+        adapter.notifyDataSetChanged();
     }
 
     @Override

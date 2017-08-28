@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.jiyun.qcloud.dashixummoban.activity.ShareDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:id="@+id/share_back"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y80"
+            android:src="@mipmap/personal_back_img"
+            android:padding="3dp"
+            android:layout_margin="3dp"/>
+        <TextView
+            android:id="@+id/share_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:textColor="@color/baise"
+            android:text="原创-互动"
+            android:layout_alignParentTop="true" />
+        <ImageView
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:id="@+id/share"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y80"
+            android:src="@mipmap/play_fullsrcee_share"
+           android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webview"></WebView>
+</LinearLayout>
