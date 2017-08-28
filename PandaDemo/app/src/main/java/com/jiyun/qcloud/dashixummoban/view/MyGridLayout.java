@@ -9,14 +9,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.GridLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.jiyun.qcloud.dashixummoban.R;
-import com.jiyun.qcloud.dashixummoban.app.App;
-import com.jiyun.qcloud.dashixummoban.entity.china.EventDragFalse;
-import com.jiyun.qcloud.dashixummoban.entity.china.EventDragTrue;
-
-import org.greenrobot.eventbus.EventBus;
 
 import java.util.List;
 
@@ -108,34 +102,10 @@ public class MyGridLayout extends GridLayout {
         // 可以拖拽
         if (mDragAble) {
             tv.setOnLongClickListener(ocl);
-            tv.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    TextView textView= (TextView) v;
-                    if (count>4){
-                        EventBus.getDefault().post(new EventDragTrue(textView.getText().toString().trim()));
-                        removeView(v);
-                        count=count-1;
 
-                    }else {
-
-                                Toast.makeText(App.mBaseActivity, "栏目区，不能少于四个频道", Toast.LENGTH_SHORT).show();
-
-                    }
-
-                }
-            });
         } else {// 不能拖拽
             tv.setOnLongClickListener(null);
-           tv.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    TextView textView= (TextView) v;
-                    EventBus.getDefault().post(new EventDragFalse(textView.getText().toString().trim()));
-                    count=count+1;
-                    removeView(v);
-                }
-            });
+
         }
 
     }

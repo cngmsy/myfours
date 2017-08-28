@@ -14,7 +14,7 @@
         android:layout_height="50dp"
         android:background="@color/colorPrimary">
         <ImageView
-            android:id="@+id/back"
+            android:id="@+id/sha_back"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:src="@mipmap/personal_back_img"

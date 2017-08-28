@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
@@ -41,6 +43,7 @@ public class ShareActivity extends BaseActivity implements ShareContract.ShareVi
             }
         }
     };
+    private ImageView sha_back;
 
     @Override
     protected void initData() {
@@ -57,6 +60,14 @@ public class ShareActivity extends BaseActivity implements ShareContract.ShareVi
         xRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
         xRecyclerView.setArrowImageView(R.drawable.iconfont_downgrey);
         xRecyclerView.setLoadingMoreProgressStyle(ProgressStyle.Pacman);
+
+        sha_back = (ImageView) findViewById(R.id.sha_back);
+        sha_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     @Override
@@ -86,7 +97,6 @@ public class ShareActivity extends BaseActivity implements ShareContract.ShareVi
 
     @Override
     public void getResult(ShareBean shareBean) {
-     //   Log.d("ShareActivity", shareBean.getInteractive().get(0).getTitle());
         list.addAll(shareBean.getInteractive());
         shareAdapter = new ShareAdapter(this,list);
         xRecyclerView.setAdapter(shareAdapter);
