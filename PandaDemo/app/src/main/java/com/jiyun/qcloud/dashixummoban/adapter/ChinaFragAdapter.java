@@ -26,7 +26,7 @@ import okhttp3.Response;
  * Created by liuwangping on 2017/8/24.
  */
 
-public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean>{
+public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
     private int i = 1;
     private LiveChinaLiveBean bean;
 

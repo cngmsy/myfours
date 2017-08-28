@@ -49,6 +49,7 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
     private Button bianji;
     private TextView hideText;
     private  ArrayList<String> stringArrayList=new ArrayList<>();
+    private String title;
 
     @Override
     protected int getLayoutRes() {
@@ -61,6 +62,7 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
         if (presenter != null) {
             presenter.start();
         }
+
     }
 
     @Override
@@ -76,11 +78,22 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
 
     @Override
     public void showChinaTab(ChinaTabBean chinaTabBean) {
-
         tablist = chinaTabBean.getTablist();
         alllist = chinaTabBean.getAlllist();
-        tabNamelist.clear();
-        fragmentlist.clear();
+
+        //去掉下面集合和上面重复的数据
+        if(stringArrayList.size()==0) {
+           for (int i = 0; i < alllist.size(); i++) {
+                for (int j = 0; j < tablist.size(); j++) {
+                    title = alllist.get(i).getTitle();
+                    String title1 = tablist.get(j).getTitle();
+                    if (title.equals(title1)) {
+                        alllist.remove(i);
+                    }
+                }
+                stringArrayList.add(title);
+            }
+        }
 
         for (int i = 0; i < tablist.size(); i++) {
             tabNamelist.add(tablist.get(i).getTitle());
@@ -133,19 +146,10 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
         ImageView back= inflate.findViewById(R.id.add_back);
         topmygridlayout.setDragAble(true);
         bottommygridlayout.setDragAble(false);
+        //给上下Gridlayout赋值
         topmygridlayout.setAddList(tabNamelist);
-        //去掉下面集合和上面重复的数据
-        for (int i=0;i<alllist.size();i++){
-            String title = alllist.get(i).getTitle()    ;
-            for (int j = 0; j <tablist.size() ; j++) {
-                String title1 = tablist.get(j).getTitle();
-                if(title.equals(title1)){
-                    alllist.remove(i);
-                }
-            }
-            stringArrayList.add(title);
-        }
         bottommygridlayout.setAddList(stringArrayList);
+
         //这是初始化布局为了显示PuPO
         //这是new一个对象后面的参数。第一个参数布局，第二个参数用容器调用一个系统的方法，后面的是旋转的度数
         final PopupWindow popupWindow = new PopupWindow(inflate, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -186,8 +190,6 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
                                         tablist.remove(i);
                                         tabNamelist.remove(tv.getText().toString().trim());
                                         fragmentlist.remove(i);
-
-
                                     }
                                 }
                             }else{
@@ -215,7 +217,6 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
                                     alllist.remove(i);
                                     tabNamelist.add(tv.getText().toString().trim());
                                     fragmentlist.add(new ChinaItemFragment(alllistBean.getUrl()));
-                                    
                                 }
                             }
                         }
@@ -224,7 +225,7 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
                 } else if (str.equals("完成")) {
                     bianji.setText("编辑");
                     hideText.setVisibility(View.GONE);
-                    adapter.notifyDataSetChanged();
+//                    adapter.notifyDataSetChanged();
                     topmygridlayout.setOnItemClickListener(new MyGridLayout.OnItemClickListener() {
                         @Override
                         public void onItemClick(TextView tv) {
@@ -244,6 +245,7 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                adapter.notifyDataSetChanged();
                 popupWindow.dismiss();
             }
         });
