@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.App"
@@ -33,7 +34,10 @@
             android:theme="@android:style/Theme.NoTitleBar"
             android:windowSoftInputMode="stateAlwaysHidden" />
         <activity android:name=".ui.observation.bobaoxiang.BoxiangActivity" />
-        <activity android:name=".ui.culture.gungunxiang.GunxiangActivity"></activity>
+        <activity android:name=".ui.culture.gungunxiang.GunxiangActivity" />
+        <activity android:name=".ui.live.detail_video.PandaVideoActivity" />
+        <activity android:name=".ui.culture.gungunxiang.HeaderActivity" />
+        <activity android:name=".ui.observation.bobaoxiang.BOheaderActivity"></activity>
     </application>
 
 </manifest>

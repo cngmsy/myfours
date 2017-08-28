@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+    <RelativeLayout
+      android:layout_marginLeft="@dimen/x12"
+        android:layout_marginRight="@dimen/x12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/myimage"
+            android:src="@drawable/tab_panda_eye_normal"
+            android:layout_width="@dimen/x200"
+            android:scaleType="fitXY"
+            android:layout_height="@dimen/x140"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <ImageView
+            android:src="@drawable/lpanda_live_layer"
+            android:layout_alignBottom="@+id/myimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x5"
+            android:layout_marginBottom="@dimen/x5"/>
+        <TextView
+            android:id="@+id/zhibotext"
+            android:layout_width="@dimen/x180"
+            android:layout_height="@dimen/x60"
+            android:layout_below="@+id/myimage"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="#000"
+            android:text="你好不知道比在干啥什么鬼东西" />
+    </RelativeLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:background="#dbd9d9"
+        android:layout_height="@dimen/x1" />
+</LinearLayout>

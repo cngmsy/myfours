@@ -6,7 +6,7 @@ import java.util.List;
  * Created by Administrator on 2017/8/23.
  * 首页精彩一刻
  */
-
+//http://www.ipanda.com/kehuduan/shipinliebieye/jingcaiyike/index.json
 public class WonderfulBean {
     private List<ListBean> list;
 

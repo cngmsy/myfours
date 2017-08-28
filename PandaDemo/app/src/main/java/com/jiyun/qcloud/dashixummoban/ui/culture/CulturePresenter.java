@@ -51,4 +51,5 @@ public class CulturePresenter implements CultureContract.Presenter{
     public void seconed(String url) {
 
     }
+
 }

@@ -8,4 +8,6 @@ public interface IBasePresenter {
     void start();
 
     void seconed(String url);
+
+
 }

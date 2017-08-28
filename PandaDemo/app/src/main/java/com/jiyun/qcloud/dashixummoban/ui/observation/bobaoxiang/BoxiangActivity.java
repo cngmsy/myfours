@@ -27,7 +27,7 @@ public class BoxiangActivity extends BaseActivity {
         Intent intent = getIntent();
         String url = intent.getStringExtra("url");
         WebSettings webSettings = webview.getSettings();
-                webSettings.setJavaScriptEnabled(true);
+                webSettings.setJavaScriptEnabled(false);
                 webview.loadUrl(url);
     }
 

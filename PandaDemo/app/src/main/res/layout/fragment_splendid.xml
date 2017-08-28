@@ -2,7 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/live_item_bg"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.live.splendid.SplendidFragment">
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView

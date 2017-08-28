@@ -3,10 +3,14 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 import com.jiyun.qcloud.dashixummoban.config.Urls;
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
+import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.BiankanBianliaoBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.FasongBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.MultiBean;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaLiveBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.PandaVideoBean;
+import com.jiyun.qcloud.dashixummoban.entity.pandalive.SplendBean;
 import com.jiyun.qcloud.dashixummoban.modle.net.HttpFactory;
 import com.jiyun.qcloud.dashixummoban.modle.net.callback.NetWorkCallBack;
 
@@ -18,10 +22,21 @@ import java.util.Map;
  */
 
 public class  PandaHomeModelImpl implements IPandaHomeModel {
+
 //主页
     @Override
     public void loadHomeList(NetWorkCallBack<PandaHome> callback) {
-        iHttp.get(Urls.PANDAHOME,null,callback);
+        iHttp.get(Urls.HOMELUN,null,callback);
+    }
+
+    @Override
+    public void loadJingCaiList(NetWorkCallBack<WonderfulBean> callback) {
+        iHttp.get(Urls.WONDERFUL,null,callback);
+    }
+
+    @Override
+    public void loadGunGunList(NetWorkCallBack<BillowingBean> callback) {
+        iHttp.get(Urls.BILLOWING,null,callback);
     }
 //熊猫直播正在直播
     @Override
@@ -51,4 +66,51 @@ public class  PandaHomeModelImpl implements IPandaHomeModel {
     public void getBiankanBianliaoData(NetWorkCallBack<BiankanBianliaoBean> myCallBack) {
         HttpFactory.createOK().get("http://newcomment.cntv.cn/comment/list?prepage=20&app=ipandaApp&itemid=zhiboye_chat&nature=1&page=1", null, myCallBack);
     }
+
+    @Override
+    public void getSplendData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getDangXiongData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getChaoMengData(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getDangAn(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getTop(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getNaXie(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getTeBie(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getNews(Map<String,String> map,NetWorkCallBack<SplendBean> callBack) {
+        HttpFactory.createOK().get(Urls.SPLENDURL,map,callBack);
+    }
+
+    @Override
+    public void getVideoData(String url, NetWorkCallBack<PandaVideoBean> callBack) {
+        HttpFactory.createOK().get(url,null,callBack);
+    }
+
 }

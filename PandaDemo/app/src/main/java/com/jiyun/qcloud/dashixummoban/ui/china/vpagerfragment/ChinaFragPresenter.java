@@ -52,4 +52,5 @@ public class ChinaFragPresenter implements ChinaFragContract.Presenter {
     public void seconed(String url) {
 
     }
+
 }

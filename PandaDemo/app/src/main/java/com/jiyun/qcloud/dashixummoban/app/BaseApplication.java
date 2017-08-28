@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.multidex.MultiDexApplication;
+
 import com.jiyun.qcloud.dashixummoban.manager.ActivityCollector;
 import com.orhanobut.logger.AndroidLogTool;
 import com.orhanobut.logger.Logger;
@@ -25,6 +26,9 @@ public class BaseApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
+        //全局异常捕获
+
+
         if (Config.DEVELOPER_MORE&& Build.VERSION.SDK_INT<=Build.VERSION_CODES.GINGERBREAD) {
             //设置线程的严苛模式
             StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectAll().penaltyDialog().build());

@@ -19,6 +19,7 @@ import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.Bobao.Bo;
 import com.jiyun.qcloud.dashixummoban.entity.Bobao.Bolist;
+import com.jiyun.qcloud.dashixummoban.ui.observation.bobaoxiang.BOheaderActivity;
 import com.jiyun.qcloud.dashixummoban.ui.observation.bobaoxiang.BoxiangActivity;
 
 import java.util.ArrayList;
@@ -37,6 +38,7 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
     @BindView(R.id.obrecycler)
     XRecyclerView obrecycler;
     Unbinder unbinder;
+    private int Index = 1;
     List<Bo.DataBean.BigImgBean> list2 = new ArrayList<>();
     List<Bolist.ListBean> bolist = new ArrayList<>();
     ObContract.Presenter presenter;
@@ -46,6 +48,17 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
             super.handleMessage(msg);
             switch (msg.what){
                 case 1:
+                    adapter.notifyDataSetChanged();
+                    break;
+                case 2:
+                    initData();
+                    Index++;
+                    obrecycler.refreshComplete();
+                    adapter.notifyDataSetChanged();
+                    break;
+                case 3:
+                    Index=1;
+                    obrecycler.loadMoreComplete();
                     adapter.notifyDataSetChanged();
                     break;
             }
@@ -83,6 +96,18 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
         adapter = new BoAdapter(bolist,getActivity());
         obrecycler.setAdapter(adapter);
         obrecycler.addHeaderView(inflas);
+
+        obrecycler.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                handler.sendEmptyMessageDelayed(2,1000);
+            }
+
+            @Override
+            public void onLoadMore() {
+                handler.sendEmptyMessageDelayed(3,2000);
+            }
+        });
     }
 
 
@@ -111,6 +136,13 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
                 Intent intent = new Intent(getContext(), BoxiangActivity.class);
                 intent.putExtra("url",list.get(position).getUrl());
                 getActivity().startActivity(intent);
+            }
+        });
+
+        boHeaderimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), BOheaderActivity.class));
             }
         });
     }
