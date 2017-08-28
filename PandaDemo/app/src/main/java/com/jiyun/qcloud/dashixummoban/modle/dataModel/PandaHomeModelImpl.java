@@ -22,17 +22,17 @@ import java.util.Map;
 
 public class  PandaHomeModelImpl implements IPandaHomeModel {
 
-//主页
+    //主页
     @Override
     public void loadHomeList(NetWorkCallBack<PandaHome> callback) {
         iHttp.get(Urls.HOMELUN,null,callback);
     }
-
+     //首页精彩一刻
     @Override
     public void loadJingCaiList(NetWorkCallBack<WonderfulBean> callback) {
         iHttp.get(Urls.WONDERFUL,null,callback);
     }
-
+   //首页滚滚视频
     @Override
     public void loadGunGunList(NetWorkCallBack<BillowingBean> callback) {
         iHttp.get(Urls.BILLOWING,null,callback);

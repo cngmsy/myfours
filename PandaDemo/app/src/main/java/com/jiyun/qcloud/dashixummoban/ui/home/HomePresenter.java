@@ -24,7 +24,7 @@ public class HomePresenter implements HomeContract.Presenter {
      */
     public HomePresenter(HomeContract.View homeView){
         this.homeView = homeView;
-        homeView.setPresenter(this);//把
+        homeView.setPresenter(this);//让view层持有presenter层对象
         this.homeModel = new PandaHomeModelImpl();
     }
 

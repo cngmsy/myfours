@@ -18,11 +18,11 @@
             android:layout_width="match_parent"
             android:background="#dbd9d9"
             android:layout_height="@dimen/x4" />
-    <GridView
+    <com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview
         android:id="@+id/chinaview"
         android:numColumns="3"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/x700"></GridView>
+        android:layout_height="@dimen/x700"></com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview>
     <TextView
         android:layout_width="match_parent"
         android:background="#dbd9d9"

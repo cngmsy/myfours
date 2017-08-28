@@ -8,10 +8,10 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
-        <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
-            android:id="@+id/videocontroller1"
-            android:layout_width="match_parent"
-            android:layout_height="200dp" />
+        <!--<fm.jiecao.jcvideoplayer_lib.JCVideoPlayer-->
+            <!--android:id="@+id/videocontroller1"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="200dp" />-->
         <ImageView
             android:id="@+id/pandanlive_vitamio"
             android:layout_width="match_parent"
