@@ -1,6 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.ui.culture;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -17,6 +18,8 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.gungun.Gun;
+import com.jiyun.qcloud.dashixummoban.ui.culture.gungunxiang.GunxiangActivity;
+import com.jiyun.qcloud.dashixummoban.ui.culture.gungunxiang.HeaderActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -122,6 +125,22 @@ public class CulturePageFragment extends BaseFragment implements CultureContract
                 adapter.notifyDataSetChanged();
             }
         });
+        adapter.setOnItemClickLinear(new CuAdapter.OnItemClickLinear() {
+            @Override
+            public void onItemvlick(int position) {
+                Intent intent = new Intent(getActivity(), GunxiangActivity.class);
+                intent.putExtra("vsid",list.get(position).getId());
+                startActivity(intent);
+            }
+        });
+        gungunHeaderimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), HeaderActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void initimage() {

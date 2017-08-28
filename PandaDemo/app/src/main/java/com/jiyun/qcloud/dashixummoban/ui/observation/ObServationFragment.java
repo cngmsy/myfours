@@ -1,6 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.ui.observation;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -18,6 +19,8 @@ import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.Bobao.Bo;
 import com.jiyun.qcloud.dashixummoban.entity.Bobao.Bolist;
+import com.jiyun.qcloud.dashixummoban.ui.observation.bobaoxiang.BOheaderActivity;
+import com.jiyun.qcloud.dashixummoban.ui.observation.bobaoxiang.BoxiangActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +38,7 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
     @BindView(R.id.obrecycler)
     XRecyclerView obrecycler;
     Unbinder unbinder;
+    private int Index = 1;
     List<Bo.DataBean.BigImgBean> list2 = new ArrayList<>();
     List<Bolist.ListBean> bolist = new ArrayList<>();
     ObContract.Presenter presenter;
@@ -44,6 +48,17 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
             super.handleMessage(msg);
             switch (msg.what){
                 case 1:
+                    adapter.notifyDataSetChanged();
+                    break;
+                case 2:
+                    initData();
+                    Index++;
+                    obrecycler.refreshComplete();
+                    adapter.notifyDataSetChanged();
+                    break;
+                case 3:
+                    Index=1;
+                    obrecycler.loadMoreComplete();
                     adapter.notifyDataSetChanged();
                     break;
             }
@@ -81,6 +96,18 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
         adapter = new BoAdapter(bolist,getActivity());
         obrecycler.setAdapter(adapter);
         obrecycler.addHeaderView(inflas);
+
+        obrecycler.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                handler.sendEmptyMessageDelayed(2,1000);
+            }
+
+            @Override
+            public void onLoadMore() {
+                handler.sendEmptyMessageDelayed(3,2000);
+            }
+        });
     }
 
 
@@ -91,24 +118,33 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
 
     @Override
     public void showBoData(Bo bo) {
+
         presenter.seconed(bo.getData().getListurl());
-       /* List<Bo.DataBean.BigImgBean> list2 = new ArrayList<>();
-        for (int i = 0; i < list2.size(); i++) {
-            image = list2.get(i).getImage();
-            title = list2.get(i).getTitle();
-            Glide.with(boHeaderimage.getContext()).load(image).into(boHeaderimage);
-            boHeadercontext.setText(title);
+       List<Bo.DataBean.BigImgBean> list2 = new ArrayList<>();
+            Glide.with(boHeaderimage.getContext()).load(bo.getData().getBigImg().get(0).getImage()).into(boHeaderimage);
+            boHeadercontext.setText(bo.getData().getBigImg().get(0).getTitle());
             handler.sendEmptyMessage(1);
-        }*/
     }
 
     @Override
-    public void showBoListData(List<Bolist.ListBean> list) {
+    public void showBoListData(final List<Bolist.ListBean> list) {
         bolist.addAll(list);
-        Glide.with(getContext()).load(list.get(0).getPicurl()).into(boHeaderimage);
-        boHeadercontext.setText(list.get(0).getTitle());
         handler.sendEmptyMessage(1);
+        adapter.setOnItemClickLinear(new BoAdapter.OnItemClickLinear() {
+            @Override
+            public void onItemvlick(int position) {
+                Intent intent = new Intent(getContext(), BoxiangActivity.class);
+                intent.putExtra("url",list.get(position).getUrl());
+                getActivity().startActivity(intent);
+            }
+        });
 
+        boHeaderimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(), BOheaderActivity.class));
+            }
+        });
     }
     @Override
     public void listener() {

@@ -12,14 +12,23 @@ import com.bumptech.glide.Glide;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.entity.Bobao.Bolist;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 /**
  * Created by Administrator on 2017/8/24.
  */
-public class BoAdapter extends RecyclerView.Adapter<BoAdapter.ViewHolder>{
+public class BoAdapter extends RecyclerView.Adapter<BoAdapter.ViewHolder> {
+
     List<Bolist.ListBean> bolist;
     Context context;
+    private OnItemClickLinear onItemClickLinear;
+    public void setOnItemClickLinear(OnItemClickLinear onItemClickLinear) {
+        this.onItemClickLinear = onItemClickLinear;
+    }
+    public interface OnItemClickLinear {
+        public void onItemvlick(int position);
+    }
     public BoAdapter(List<Bolist.ListBean> bolist, Context context) {
         this.bolist = bolist;
         this.context = context;
@@ -33,11 +42,21 @@ public class BoAdapter extends RecyclerView.Adapter<BoAdapter.ViewHolder>{
     }
 
     @Override
-    public void onBindViewHolder(BoAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(BoAdapter.ViewHolder holder, final int position) {
           Bolist.ListBean list = bolist.get(position);
           holder.botitle.setText(list.getTitle());
-        holder.botime.setText(list.getFocus_date()+"");
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd-HH:mm:ss");
+        String t = format.format(list.getFocus_date());
+        holder.botime.setText(t);
         Glide.with(context).load(list.getPicurl()).into(holder.boimage);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (onItemClickLinear != null) {
+                    onItemClickLinear.onItemvlick(position);
+                }
+            }
+        });
     }
 
     @Override
