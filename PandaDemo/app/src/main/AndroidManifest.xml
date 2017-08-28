@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!--友盟权限-->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -42,11 +43,15 @@
         <activity android:name=".main.WelComeActivity" />
 
 
+        <!-- vitamio -->
+
+
         <activity android:name=".ui.live.detail_video.PandaVideoActivity" />
         <activity android:name=".activity.PersonActivity" />
         <activity android:name=".activity.ShareActivity" />
         <activity android:name=".activity.ShareDetailActivity" />
         <activity android:name=".activity.LoginActivity"></activity>
+
         <activity
             android:name="io.vov.vitamio.activity.InitActivity"
             android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
@@ -104,6 +109,12 @@
         <meta-data
             android:name="UMENG_MESSAGE_SECRET"
             android:value="940cd788d1573459936c1b39c67d2573"></meta-data>
+
+        <activity android:name=".ui.observation.bobaoxiang.BoxiangActivity" />
+        <activity android:name=".ui.culture.gungunxiang.GunxiangActivity" />
+        <activity android:name=".ui.culture.gungunxiang.HeaderActivity" />
+        <activity android:name=".ui.observation.bobaoxiang.BOheaderActivity"></activity>
+
     </application>
 
 </manifest>
