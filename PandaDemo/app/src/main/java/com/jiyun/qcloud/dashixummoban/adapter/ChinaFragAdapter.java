@@ -89,6 +89,9 @@ public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
                 JCVideoPlayer player= holder.itemView.findViewById(R.id.jcvideoplayer);
                 player.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
                 player.setUp(bean.getFlv_url().getFlv2(),null);
+
+
+
             }
         });
     }
