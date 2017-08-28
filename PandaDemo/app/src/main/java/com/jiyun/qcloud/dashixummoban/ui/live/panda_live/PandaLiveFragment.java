@@ -34,7 +34,6 @@ import butterknife.OnClick;
 import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.widget.VideoView;
 
-
 /**
  *
  */

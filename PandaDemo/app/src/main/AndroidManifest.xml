@@ -26,8 +26,10 @@
             </intent-filter>
         </activity>
 
+
         <activity android:name=".main.MainActivity" />
         <activity android:name=".main.WelComeActivity" />
+
 
         <activity android:name=".ui.live.detail_video.PandaVideoActivity" />
         <activity android:name=".activity.PersonActivity" />
