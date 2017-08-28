@@ -43,4 +43,6 @@ public class Urls {
     public static final String SPLENDURL = "http://api.cntv.cn/video/videolistById";
 
     public static final String BIGPAGE = "http://www.ipanda.com/kehuduan/PAGE14501772263221982/index.json";
+
+    public static final String SHARE="http://www.ipanda.com/kehuduan/PAGE14501767715521482/index.json";
 }

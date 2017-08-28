@@ -10,4 +10,5 @@ public interface IBaseView<T> {
     void showMessage(String msg);
     void setPresenter(T t);
 
+
 }
