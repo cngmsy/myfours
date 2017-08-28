@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.live.detail_video.PandaVideoActivity">
 
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,5 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/panda_video"/>
-
+    <ImageView
+        android:id="@+id/share_bt"
+        android:layout_alignParentRight="true"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/play_fullsrcee_share"/>
 </RelativeLayout>
