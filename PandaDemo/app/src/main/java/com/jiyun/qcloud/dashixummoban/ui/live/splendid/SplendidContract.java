@@ -15,5 +15,6 @@ public interface SplendidContract {
 
     interface SplendidPresenter extends IBasePresenter {
         void mapData(Map<String,String> map);
+
     }
 }

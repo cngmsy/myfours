@@ -11,15 +11,14 @@ public class SplendidPresenter implements SplendidContract.SplendidPresenter {
 
     private SplendidContract.SplendidView splendidView;
     private PandaHomeModelImpl modelImp;
-    public SplendidPresenter(SplendidContract.SplendidView splendidView) {
-        this.splendidView = splendidView;
+    public SplendidPresenter(SplendidContract.SplendidView splendidVie) {
+        this.splendidView = splendidVie;
         modelImp=new PandaHomeModelImpl();
         splendidView.setPresenter(this);
     }
 
     @Override
     public void start() {
-   //     splendidView.showProgress();
 
     }
 
@@ -46,5 +45,6 @@ public class SplendidPresenter implements SplendidContract.SplendidPresenter {
 
             }
         });
+
     }
 }

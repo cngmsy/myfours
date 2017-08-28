@@ -1,6 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.ui.live.detail_video;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseActivity;
@@ -62,8 +63,13 @@ public class PandaVideoActivity extends BaseActivity implements PandaVideoContra
 
     @Override
     protected void onResume() {
-       //设置为横屏
         super.onResume();
+        /**
+         * 设置为横屏
+         */
+        if(getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE){
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
     }
 
     @Override

@@ -8,15 +8,22 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
-        <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
-            android:id="@+id/videocontroller1"
+
+        <io.vov.vitamio.widget.VideoView
+            android:id="@+id/vitamio"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
         <ImageView
             android:id="@+id/pandanlive_vitamio"
             android:layout_width="match_parent"
-            android:layout_height="200dp" />
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/_no_history" />
     </FrameLayout>
+
     <TextView
         android:id="@+id/pandanlive_name"
         android:layout_width="wrap_content"

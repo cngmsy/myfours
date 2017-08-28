@@ -1,6 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.activity;
 
 import android.content.Intent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -58,8 +59,24 @@ public class PersonActivity extends BaseActivity {
 
 
 
-    @OnClick(R.id.set)
-    public void onViewClicked() {
-        startActivity(new Intent(PersonActivity.this,ClearActivity.class));
+    @OnClick({R.id.login, R.id.hostory, R.id.shoucang, R.id.set,R.id.back})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.login:
+                Intent intent = new Intent(PersonActivity.this,LoginActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.hostory:
+                break;
+            case R.id.shoucang:
+                break;
+            case R.id.set:
+                startActivity(new Intent(PersonActivity.this, ClearActivity.class));
+                break;
+            case R.id.back:
+                finish();
+                break;
+        }
+
     }
 }
