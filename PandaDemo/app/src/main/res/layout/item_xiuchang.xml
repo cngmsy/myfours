@@ -18,11 +18,11 @@
         android:layout_width="match_parent"
         android:background="#dbd9d9"
         android:layout_height="@dimen/x2" />
-    <GridView
+    <com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview
         android:id="@+id/zhiboview"
         android:layout_width="match_parent"
         android:layout_height="@dimen/x600"
-        android:numColumns="3"></GridView>
+        android:numColumns="3"></com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview>
     <TextView
         android:layout_width="match_parent"
         android:background="#dbd9d9"

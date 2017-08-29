@@ -2,14 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.jiyun.qcloud.dashixummoban">
 
+    <!-- vitamio -->
+
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <!--vitamio权限-->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <!--友盟权限-->
@@ -22,6 +26,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
 
     <application
         android:name=".app.App"
@@ -38,17 +43,19 @@
             </intent-filter>
         </activity>
 
-
         <activity android:name=".main.MainActivity" />
         <activity android:name=".main.WelComeActivity" />
+        <activity android:name=".ui.home.activity.ZhoBoActivity"></activity>
+        <activity android:name=".ui.home.activity.JCVideoActivity"/>
 
-
-        <!-- vitamio -->
 
 
         <activity android:name=".ui.live.detail_video.PandaVideoActivity" />
         <activity android:name=".activity.PersonActivity" />
         <activity android:name=".activity.ShareActivity" />
+
+        <activity android:name=".activity.ClearActivity" />
+
         <activity android:name=".activity.ShareDetailActivity" />
         <activity android:name=".activity.LoginActivity"></activity>
 
