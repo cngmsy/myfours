@@ -20,6 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/y60"
+        
             android:layout_gravity="center"
             android:text="设置"
             android:textColor="@color/baise"
@@ -31,9 +32,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/y16"
+
         android:paddingTop="@dimen/y16"
        android:background="@android:color/darker_gray"
         >
+
 
         <TextView
             android:layout_width="wrap_content"

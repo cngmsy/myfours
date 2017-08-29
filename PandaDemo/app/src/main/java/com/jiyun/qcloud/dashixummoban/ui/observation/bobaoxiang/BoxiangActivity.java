@@ -31,7 +31,7 @@ public class BoxiangActivity extends BaseActivity implements BoContract.BoView {
     protected void initData() {
         Intent intent = getIntent();
         id = intent.getStringExtra("id");
-          boPresenter = new BoPresenter(this);
+        boPresenter = new BoPresenter(this);
         map.put("id", id);
         map.put("serviceId", "panda");
         boPresenter.mapData(map);

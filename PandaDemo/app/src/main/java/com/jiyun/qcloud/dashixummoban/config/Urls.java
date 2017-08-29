@@ -44,7 +44,6 @@ public class Urls {
     //精彩一刻
     public static final String SPLENDURL = "http://api.cntv.cn/video/videolistById";
 
-
     public static final String GunGunVIDEO = "http://115.182.35.91/api/getVideoInfoForCBox.do";
 
     public static final String BIGPAGE = "http://www.ipanda.com/kehuduan/PAGE14501772263221982/index.json";

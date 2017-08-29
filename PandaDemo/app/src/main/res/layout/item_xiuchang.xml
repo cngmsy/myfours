@@ -23,7 +23,6 @@
     <com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview
         android:id="@+id/zhiboview"
         android:layout_width="match_parent"
-
         android:layout_height="@dimen/y600"
         android:numColumns="3"/>
 
