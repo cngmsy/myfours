@@ -3,7 +3,6 @@ package com.jiyun.qcloud.dashixummoban.ui.home.activity;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
-import android.widget.Toast;
 
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseActivity;
@@ -68,7 +67,6 @@ public class ZhoBoActivity extends BaseActivity implements ZhiContract.View{
     public void showVideoList(XiuChang xiuChang) {
         XiuChang.FlvUrlBean flv_url = xiuChang.getFlv_url();
         String flv1 = flv_url.getFlv2();
-        Toast.makeText(this, flv1+title, Toast.LENGTH_SHORT).show();
         myview.setVideoPath(flv1);
         myview.start();
     }

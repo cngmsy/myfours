@@ -9,21 +9,40 @@
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/chinaimage"
+            android:scaleType="fitXY"
             android:src="@drawable/tab_panda_eye_normal"
             android:layout_width="@dimen/x200"
-            android:layout_height="@dimen/x150"
+            android:layout_height="@dimen/y150"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
         <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/chinaimage"
+            android:src="@drawable/lpanda_bottom_gra" />
+
+        <ImageView
             android:src="@drawable/lpanda_live_layer"
             android:layout_alignBottom="@+id/chinaimage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginBottom="@dimen/y8"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/chinaimage"
+            android:layout_marginLeft="@dimen/y40"
+            android:layout_marginBottom="@dimen/y8"
+            android:text="live"
+            android:textColor="@color/baise"
+            android:textSize="10sp" />
         <TextView
             android:id="@+id/chinatext"
             android:layout_width="@dimen/x180"
-            android:layout_height="@dimen/x60"
+            android:layout_height="@dimen/y60"
             android:layout_below="@+id/chinaimage"
             android:ellipsize="end"
             android:maxLines="2"
@@ -33,5 +52,5 @@
     <TextView
         android:layout_width="match_parent"
         android:background="#dbd9d9"
-        android:layout_height="@dimen/x1" />
+        android:layout_height="@dimen/y1" />
 </LinearLayout>
