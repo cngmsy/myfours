@@ -1,6 +1,7 @@
 [
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         "merged": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_secondary_holo.9.png",
         "source": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_secondary_holo.9.png"
     },
@@ -40,6 +41,8 @@
         "merged": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\ic_launcher.png",
         "source": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\ic_launcher.png"
 =======
+=======
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
         "merged": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-xhdpi-v4\\scrubber_track_holo_dark.9.png",
         "source": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\scrubber_track_holo_dark.9.png"
     },
