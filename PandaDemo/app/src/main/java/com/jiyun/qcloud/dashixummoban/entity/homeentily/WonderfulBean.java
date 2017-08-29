@@ -27,7 +27,7 @@ public class WonderfulBean {
          * id : TITE1503458603691598
          * daytime : 2017-08-23
          * type : 2
-         * pid : 3a0c8e8a84e14a9aaad9fa32522e9a18
+         * pid : http://115.182.35.91/api/getVideoInfoForCBox.do?pid=3a0c8e8a84e14a9aaad9fa32522e9a18
          * vid :
          * order : 1
          */

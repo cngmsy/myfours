@@ -46,7 +46,6 @@ public class MyMediaController extends MediaController {
 
         textViewTime = view.findViewById(R.id.mediacontroller_time_current);
         return view;
-
     }
 
     @Override

@@ -2,6 +2,7 @@
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         "merged": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\scrubber_control_selector_holo.xml",
         "source": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable\\scrubber_control_selector_holo.xml"
     },
@@ -17,14 +18,23 @@
 >>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
         "merged": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\scrubber_control_selector_holo.xml",
         "source": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable\\scrubber_control_selector_holo.xml"
+=======
+        "merged": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\scrubber_control_selector_holo.xml",
+        "source": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable\\scrubber_control_selector_holo.xml"
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
     },
     {
-        "merged": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\scrubber_progress_horizontal_holo_dark.xml",
-        "source": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable\\scrubber_progress_horizontal_holo_dark.xml"
+        "merged": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\mediacontroller_button.xml",
+        "source": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable\\mediacontroller_button.xml"
     },
     {
+<<<<<<< HEAD
         "merged": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\mediacontroller_button.xml",
         "source": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable\\mediacontroller_button.xml"
 >>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
+        "merged": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\scrubber_progress_horizontal_holo_dark.xml",
+        "source": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable\\scrubber_progress_horizontal_holo_dark.xml"
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
     }
 ]

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.observation.bobaoxiang.BoxiangActivity">
 
-    <!--<RelativeLayout
+    <RelativeLayout
         android:id="@+id/relk"
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
             android:text="人民网"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="21dp"
+            android:layout_marginTop="10dp"
             android:layout_below="@+id/tv_bxtitle"
             android:layout_alignLeft="@+id/tv_bxtitle"
             android:layout_alignStart="@+id/tv_bxtitle" />
@@ -44,31 +44,17 @@
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp" />
 
-        <ImageView
-            android:id="@+id/img_bximage"
-            android:src="@drawable/_row1_3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_bxpubtime"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="26dp" />
-
         <TextView
             android:id="@+id/tv_bxcontent"
-            android:text="　记者10日从四川省林业厅获悉，《大熊猫国家公园体制试点方案》获得国家正式批复。《方案》将四川、陕西、甘肃三省的野生大熊猫种群高密度区、大熊猫主要栖息地、大熊猫局域种群遗传交流廊道合计80多个保护地有机整合划入国家公园，总面积达27134平方公里。其中，四川境内面积20177平方公里，主要涉及绵阳、广元、成都、德阳"
+            android:text=""
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/img_bximage"
+            android:layout_below="@+id/tv_bxsource"
             android:layout_alignLeft="@+id/tv_bxsource"
             android:layout_alignStart="@+id/tv_bxsource"
-            android:layout_marginTop="35dp" />
-    </RelativeLayout>-->
+            android:layout_marginTop="10dp" />
+    </RelativeLayout>
 
-    <WebView
-        android:id="@+id/webview"
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"></WebView>
     <RelativeLayout
         android:id="@+id/rehg"
         android:layout_width="match_parent"

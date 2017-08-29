@@ -16,7 +16,6 @@
     <TextView
         android:layout_width="match_parent"
         android:background="#dbd9d9"
-
         android:layout_height="@dimen/y4" />
 
     <TextView
