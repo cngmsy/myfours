@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
-        android:layout_margin="@dimen/x12"
+        android:layout_marginLeft="@dimen/x12"
         android:id="@+id/rela"
         android:layout_width="@dimen/x300"
         android:layout_height="wrap_content">
         <ImageView
             android:id="@+id/jingImage"
             android:layout_width="@dimen/x300"
-            android:layout_height="@dimen/x200"
+            android:layout_height="@dimen/y200"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
@@ -33,10 +33,14 @@
             android:text="你好不知道比在干啥" />
     </RelativeLayout>
     <TextView
-        android:layout_marginLeft="@dimen/x12"
         android:id="@+id/jingdata"
         android:textColor="#000"
         android:text="2017-12-8"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-</LinearLayout>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/y268"
+        android:layout_marginBottom="@dimen/y10"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/rela"
+        android:layout_alignStart="@+id/rela" />
+</RelativeLayout>

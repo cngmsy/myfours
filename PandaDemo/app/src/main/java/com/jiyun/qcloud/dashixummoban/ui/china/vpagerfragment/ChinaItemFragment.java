@@ -7,7 +7,7 @@ import android.view.View;
 import com.androidkun.PullToRefreshRecyclerView;
 import com.androidkun.callback.PullToRefreshListener;
 import com.jiyun.qcloud.dashixummoban.R;
-import com.jiyun.qcloud.dashixummoban.adapter.ChinaFragAdapter;
+import com.jiyun.qcloud.dashixummoban.adapter.china.ChinaFragAdapter;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.china.ChinaFragmentBean;
 

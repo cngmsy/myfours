@@ -2,23 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/x9"
+    android:layout_marginLeft="@dimen/x9"
+    android:layout_marginRight="@dimen/x9"
     android:background="#fff">
     <TextView
         android:id="@+id/recyc_title_name"
         android:layout_width="match_parent"
         android:text="滚滚视频"
-        android:textSize="@dimen/x24"
+        android:textSize="15sp"
         android:gravity="center_vertical"
-        android:padding="@dimen/x20"
+        android:padding="10dp"
         android:textColor="#57388d"
         android:layout_height="wrap_content" />
     <TextView
         android:layout_width="match_parent"
         android:background="#dbd9d9"
-        android:layout_height="@dimen/x2" />
+        android:layout_height="@dimen/y4" />
    <com.jiyun.qcloud.dashixummoban.ui.home.CostumListView
        android:id="@+id/gunList"
        android:layout_width="match_parent"
-       android:layout_height="@dimen/x700"></com.jiyun.qcloud.dashixummoban.ui.home.CostumListView>
+       android:layout_height="@dimen/y720"></com.jiyun.qcloud.dashixummoban.ui.home.CostumListView>
+
 </LinearLayout>

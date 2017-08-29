@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jiyun.qcloud.dashixummoban.R;
-import com.jiyun.qcloud.dashixummoban.adapter.ChinaTabAdapter;
+import com.jiyun.qcloud.dashixummoban.adapter.china.ChinaTabAdapter;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.china.ChinaTabBean;
 import com.jiyun.qcloud.dashixummoban.ui.china.vpagerfragment.ChinaItemFragment;
