@@ -24,8 +24,8 @@ import java.util.List;
  */
 
 public class HomeAdapter extends RecyclerView.Adapter {
-    private final List<WonderfulBean.ListBean> wonderfulBeen;
-    private final List<BillowingBean.ListBean> billowingBeen;
+    private  List<WonderfulBean.ListBean> wonderfulBeen;
+    private  List<BillowingBean.ListBean> billowingBeen;
     private Context context;
     private List<Object> datalist;
     private final int BOBAO = 1;
@@ -33,13 +33,30 @@ public class HomeAdapter extends RecyclerView.Adapter {
     private final int JINGCAI = 3;
     private final int GUNGUN = 4;
     private final int CHINA = 5;
+    private BoCilcks boCilcks;
+    private XiuClicks xiuClicks;
+    private GunClicks gunClicks;
+    private ChinaClicks chinaClicks;
+    private JingClicks jingClicks;
+    private String id;
+    private ItemTwo itemTwo;
+    private String title;
 
     public HomeAdapter(Context context, List<Object> list, List<WonderfulBean.ListBean> wonderfulBeanList, List<BillowingBean.ListBean> billowinglist) {
         this.context = context;
         datalist = list;
         wonderfulBeen = wonderfulBeanList;
         billowingBeen = billowinglist;
+
     }
+
+    public void notifys(List<Object> list, List<WonderfulBean.ListBean> wonderfulBeanList, List<BillowingBean.ListBean> billowinglist) {
+        datalist = list;
+        wonderfulBeen = wonderfulBeanList;
+        billowingBeen = billowinglist;
+        notifyDataSetChanged();
+    }
+
 
     @Override
     public int getItemViewType(int position) {
@@ -86,19 +103,33 @@ public class HomeAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         int itemViewType = getItemViewType(position);
         switch (itemViewType) {
             case BOBAO:
                 PandaHome.DataBean.PandaeyeBean guanchabean = (PandaHome.DataBean.PandaeyeBean) datalist.get(position);
                 List<PandaHome.DataBean.PandaeyeBean.ItemsBean> items = guanchabean.getItems();
-                PandaHome.DataBean.PandaeyeBean.ItemsBean itemsBean = items.get(0);
-                PandaHome.DataBean.PandaeyeBean.ItemsBean itemsBean1 = items.get(1);
                 BaoViewHolder holder1 = (BaoViewHolder) holder;
-                holder1.live_text.setText(itemsBean.getTitle());
-                holder1.oneText.setText(itemsBean.getBrief());
-                holder1.twotext.setText(itemsBean1.getBrief());
-                holder1.find_text.setText(itemsBean1.getTitle());
+                    PandaHome.DataBean.PandaeyeBean.ItemsBean itemsBean = items.get(0);
+                    PandaHome.DataBean.PandaeyeBean.ItemsBean itemsBean1 = items.get(1);
+                    holder1.twotext.setText(itemsBean1.getBrief());
+                    holder1.find_text.setText(itemsBean1.getTitle());
+                    holder1.live_text.setText(itemsBean.getTitle());
+                    holder1.oneText.setText(itemsBean.getBrief());
+                final String pid = itemsBean.getPid();
+                holder1.live_text.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            boCilcks.setBoListener(view,pid);
+                        }
+                    });
+                final String pid1 = itemsBean1.getPid();
+                holder1.find_text.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                       itemTwo.setitemListener(view,pid1);
+                    }
+                });
                 break;
             case ZHIBO:
                 PandaHome.DataBean.PandaliveBean pandaliveBean = (PandaHome.DataBean.PandaliveBean) datalist.get(position);
@@ -121,7 +152,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
                     }
 
                     @Override
-                    public View getView(int i, View view, ViewGroup viewGroup) {
+                    public View getView(final int i, View view, ViewGroup viewGroup) {
                         ViewHodelr   zhiboholder = null;
                         if (view == null){
                             zhiboholder = new ViewHodelr();
@@ -133,8 +164,16 @@ public class HomeAdapter extends RecyclerView.Adapter {
                             zhiboholder = (ViewHodelr) view.getTag();
                         }
                         PandaHome.DataBean.PandaliveBean.ListBeanX listBeanX = list.get(i);
+                        id = listBeanX.getId();
+                        title = listBeanX.getTitle();
                         zhiboholder.xiutittext.setText(listBeanX.getTitle());
                         Glide.with(context).load(listBeanX.getImage()).into(zhiboholder.xiuimage);
+                        view.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                xiuClicks.setBoListener(view,i);
+                            }
+                        });
                         return view;
                     }
                     class ViewHodelr{
@@ -142,6 +181,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
                         private ImageView xiuimage;
                     }
                 });
+
 
                 break;
             case JINGCAI:
@@ -163,7 +203,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
                     }
 
                     @Override
-                    public View getView(int i, View view, ViewGroup viewGroup) {
+                    public View getView(final int i, View view, ViewGroup viewGroup) {
                         JingCaiHolder   jingCaiHolder = null;
                         if (view == null){
                             jingCaiHolder = new JingCaiHolder();
@@ -179,6 +219,12 @@ public class HomeAdapter extends RecyclerView.Adapter {
                         Glide.with(context).load(wonderfulbean.getImage()).into(jingCaiHolder.jingimage);
                         jingCaiHolder.jingtext.setText(wonderfulbean.getTitle());
                         jingCaiHolder.jingdata.setText(wonderfulbean.getDaytime());
+                        view.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                jingClicks.setBoListener(view,i);
+                            }
+                        });
                         return view;
                     }
                     class JingCaiHolder{
@@ -186,7 +232,6 @@ public class HomeAdapter extends RecyclerView.Adapter {
                         private TextView  jingtext,jingdata;
                     }
                 });
-
                 break;
             case GUNGUN:
                 GunViewHolder holder4 = (GunViewHolder) holder;
@@ -222,7 +267,14 @@ public class HomeAdapter extends RecyclerView.Adapter {
                          BillowingBean.ListBean gunbean = billowingBeen.get(i);
                          gunHolder.titletext.setText(gunbean.getTitle());
                          gunHolder.gundata.setText(gunbean.getDaytime());
+                         final String pid2 = gunbean.getPid();
                          Glide.with(context).load(gunbean.getImage()).into(gunHolder.gunImage);
+                         view.setOnClickListener(new View.OnClickListener() {
+                             @Override
+                             public void onClick(View view) {
+                                 gunClicks.setBoListener(view,pid2);
+                             }
+                         });
                          return view;
                      }
                      class GunHolder{
@@ -253,12 +305,12 @@ public class HomeAdapter extends RecyclerView.Adapter {
                     }
 
                     @Override
-                    public View getView(int i, View view, ViewGroup viewGroup) {
+                    public View getView(final int i, View view, ViewGroup viewGroup) {
                         ChinaHolder   chinaHolder = null;
                         if (view==null){
                             chinaHolder = new ChinaHolder();
                             view = LayoutInflater.from(context).inflate(R.layout.item_zhongguo_home_item,null);
-                           chinaHolder.chinaimage = view.findViewById(R.id.chinaimage);
+                            chinaHolder.chinaimage = view.findViewById(R.id.chinaimage);
                             chinaHolder.chinatext = view.findViewById(R.id.chinatext);
                             view.setTag(chinaHolder);
                         }else {
@@ -267,6 +319,12 @@ public class HomeAdapter extends RecyclerView.Adapter {
                         PandaHome.DataBean.ChinaliveBean.ListBean listBean = chinalist.get(i);
                         Glide.with(context).load(listBean.getImage()).into(chinaHolder.chinaimage);
                         chinaHolder.chinatext.setText(listBean.getTitle());
+                        view.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                chinaClicks.setBoListener(view,i);
+                            }
+                        });
                         return view;
                     }
                     class ChinaHolder{
@@ -287,6 +345,42 @@ public class HomeAdapter extends RecyclerView.Adapter {
         return datalist != null ? datalist.size() : 0;
     }
 
+    public interface ItemTwo{
+        void setitemListener(View view,String pid);
+    }
+    public void setitemListener(ItemTwo itemTwo){
+        this.itemTwo = itemTwo;
+    }
+    public interface BoCilcks{
+      void setBoListener(View view,String pid);
+  }
+    public interface XiuClicks{
+        void setBoListener(View view,int i);
+    }
+    public void setZhiBoListener(XiuClicks xiuClicks){
+        this.xiuClicks  = xiuClicks;
+    }
+    public interface JingClicks{
+        void setBoListener(View view,int i);
+    }
+    public void setWonderListener(JingClicks jingClicks){
+        this.jingClicks = jingClicks;
+    }
+    public interface GunClicks{
+        void setBoListener(View view,String pid);
+    }
+    public void setGunClicks(GunClicks gunClicks){
+        this.gunClicks = gunClicks;
+    }
+    public interface ChinaClicks{
+        void setBoListener(View view,int i);
+    }
+    public void setChinaClicks(ChinaClicks chinaClicks){
+        this.chinaClicks = chinaClicks;
+    }
+    public void setListeners(BoCilcks boCilcks){
+        this.boCilcks = boCilcks;
+    }
 
     private class BaoViewHolder extends RecyclerView.ViewHolder {
         private TextView oneText;
@@ -322,7 +416,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
 
     private class JingCaiViewHolder extends RecyclerView.ViewHolder {
         private View rootView;
-        private  GridView jingGridView;
+        private  StationaryGridview jingGridView;
         private JingCaiViewHolder(View jingcai) {
             super(jingcai);
             rootView = jingcai;

@@ -1,6 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.ui.home;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
@@ -15,8 +16,11 @@ import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
+import com.jiyun.qcloud.dashixummoban.ui.home.activity.JCVideoActivity;
+import com.jiyun.qcloud.dashixummoban.ui.home.activity.ZhoBoActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
+import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.loader.ImageLoader;
 
 import java.util.ArrayList;
@@ -44,6 +48,11 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
     private List<String>    strList = new ArrayList<>();
     private Banner homebanner;
     private HomeAdapter adapter;
+    private   String url="http://115.182.35.91/api/getVideoInfoForCBox.do?pid=";
+    private String zhibo = "http://vdn.live.cntv.cn/api2/live.do?client=androidapp&channel=pa://cctv_p2p_hd";
+    private List<WonderfulBean.ListBean> wonderfulBeanList;
+    private List<BillowingBean.ListBean> billowingBeanList;
+    private PandaHome pandaHome;
 
     @Override
     protected int getLayoutRes() {
@@ -52,6 +61,9 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
 
     @Override
     protected void initData() {
+        if (pandaShouYes.size()>0){
+            pandaShouYes.clear();
+        }
         presenter.start();
     }
 
@@ -62,6 +74,97 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
         homerecycler.addHeaderView(headview);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         homerecycler.setLayoutManager(manager);
+        homerecycler.setLoadingMoreEnabled(false);
+        adapter = new HomeAdapter(getActivity(),pandaShouYes,wonderfulBeanList,billowingBeanList);
+        homerecycler.setAdapter(adapter);
+        adapter.setListeners(new HomeAdapter.BoCilcks() {
+            @Override
+            public void setBoListener(View view, String pid) {
+                Intent intent = new Intent(getActivity(), JCVideoActivity.class);
+                String adress = url + pid;
+                intent.putExtra("url", adress);
+                getActivity().startActivity(intent);
+            }
+        });
+       adapter.setitemListener(new HomeAdapter.ItemTwo() {
+           @Override
+           public void setitemListener(View view, String pid) {
+               Intent intent = new Intent(getActivity(), JCVideoActivity.class);
+               String adress = url + pid;
+               intent.putExtra("url", adress);
+               getActivity().startActivity(intent);
+           }
+       });
+         adapter.setZhiBoListener(new HomeAdapter.XiuClicks() {
+             @Override
+             public void setBoListener(View view,int i) {
+                 Intent  intent = new Intent(getActivity(),ZhoBoActivity.class);
+                 PandaHome.DataBean.PandaliveBean pandalive = pandaHome.getData().getPandalive();
+                 List<PandaHome.DataBean.PandaliveBean.ListBeanX> list = pandalive.getList();
+                 PandaHome.DataBean.PandaliveBean.ListBeanX listBeanX = list.get(i);
+                 String id = listBeanX.getId();
+                 String title = listBeanX.getTitle();
+                 String  xiu = zhibo+id;
+                 intent.putExtra("url", xiu);
+                 intent.putExtra("title",title);
+                 getActivity().startActivity(intent);
+             }
+         });
+        adapter.setWonderListener(new HomeAdapter.JingClicks() {
+            @Override
+            public void setBoListener(View view, int i) {
+                WonderfulBean.ListBean listBean = wonderfulBeanList.get(i);
+                String pid = listBean.getPid();
+                String title = listBean.getTitle();
+                String path = url+pid;
+                Intent intent = new Intent(getActivity(), JCVideoActivity.class);
+                intent.putExtra("url",path);
+                getActivity().startActivity(intent);
+            }
+        });
+        adapter.setGunClicks(new HomeAdapter.GunClicks() {
+            @Override
+            public void setBoListener(View view, String pid) {
+                String path = url+pid;
+                Intent intent = new Intent(getActivity(), JCVideoActivity.class);
+                intent.putExtra("url",path);
+                getActivity().startActivity(intent);
+            }
+        });
+        adapter.setChinaClicks(new HomeAdapter.ChinaClicks() {
+            @Override
+            public void setBoListener(View view, int i) {
+                PandaHome.DataBean.ChinaliveBean chinalive = pandaHome.getData().getChinalive();
+                List<PandaHome.DataBean.ChinaliveBean.ListBean> list = chinalive.getList();
+                PandaHome.DataBean.ChinaliveBean.ListBean listBean = list.get(i);
+                String id = listBean.getId();
+                String  xiu = zhibo+id;
+                String title = listBean.getTitle();
+                Intent  intent = new Intent(getActivity(),ZhoBoActivity.class);
+                intent.putExtra("url", xiu);
+                intent.putExtra("title",title);
+                getActivity().startActivity(intent);
+            }
+        });
+        homerecycler.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+
+                homerecycler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        initData();
+                    }
+                },0);
+                homerecycler.refreshComplete();
+                adapter.notifyDataSetChanged();
+            }
+            @Override
+            public void onLoadMore() {
+
+            }
+        });
+
     }
 
     @Override
@@ -92,21 +195,34 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
 
     @Override
     public void showHomeListData(PandaHome pandaHome, WonderfulBean wonderfulBean, BillowingBean billowingBean) {
-
+        this.pandaHome = pandaHome;
         PandaHome.DataBean data = pandaHome.getData();
-        List<PandaHome.DataBean.BigImgBean> bigImg = data.getBigImg();
-        for (int i = 0; i < bigImg.size(); i++) {
-            PandaHome.DataBean.BigImgBean bigImgBean = bigImg.get(i);
-            String image = bigImgBean.getImage();
-            headlist.add(image);
-            String title = bigImgBean.getTitle();
-            strList.add(title);
+        final List<PandaHome.DataBean.BigImgBean> bigImg = data.getBigImg();
+        if (headlist.size()<bigImg.size()) {
+            for (int i = 0; i < bigImg.size(); i++) {
+                PandaHome.DataBean.BigImgBean bigImgBean = bigImg.get(i);
+                String image = bigImgBean.getImage();
+                String title = bigImgBean.getTitle();
+                headlist.add(image);
+                strList.add(title);
+
+            }
         }
         homebanner.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE);
         homebanner.setImageLoader(new HomeBannerImageLoader());
         homebanner.setImages(headlist);
         homebanner.setBannerTitles(strList);
         homebanner.setIndicatorGravity(BannerConfig.RIGHT);
+        homebanner.setOnBannerListener(new OnBannerListener() {
+            @Override
+            public void OnBannerClick(int position) {
+                String pid = bigImg.get(position).getPid();
+                String path = url+pid;
+                Intent intent = new Intent(getActivity(), JCVideoActivity.class);
+                intent.putExtra("url",path);
+                getActivity().startActivity(intent);
+            }
+        });
         homebanner.start();
         //熊猫播报
         pandaShouYes.add(data.getPandaeye());
@@ -120,11 +236,12 @@ public class HomePageFragment extends BaseFragment implements HomeContract.View 
         //直播中国
         pandaShouYes.add(data.getChinalive());
         //精彩一刻
-        List<WonderfulBean.ListBean> wonderfulBeanList = wonderfulBean.getList();
-        //滚滚视频
-        List<BillowingBean.ListBean> billowingBeanList = billowingBean.getList();
-        adapter = new HomeAdapter(getActivity(),pandaShouYes,wonderfulBeanList,billowingBeanList);
-        homerecycler.setAdapter(adapter);
+        wonderfulBeanList = wonderfulBean.getList();
+        //
+        billowingBeanList = billowingBean.getList();
+      //  adapter.notifyDataSetChanged();
+        adapter.notifys(pandaShouYes,wonderfulBeanList,billowingBeanList);
+
     }
 
     @Override

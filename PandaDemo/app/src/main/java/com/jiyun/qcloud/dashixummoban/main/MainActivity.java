@@ -3,6 +3,8 @@ package com.jiyun.qcloud.dashixummoban.main;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -71,7 +73,10 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+//打印屏幕分辨率
+        Display display = getWindowManager().getDefaultDisplay();
+        Log.e("width-display :", display.getWidth() + "");
+        Log.e("heigth-display :", display.getHeight() + "");
     }
 
     @Override

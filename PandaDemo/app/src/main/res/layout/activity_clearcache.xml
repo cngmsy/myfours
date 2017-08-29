@@ -21,7 +21,7 @@
             android:layout_height="35sp"
             android:text="设置"
             android:layout_gravity="center"
-            android:textColor="@color/white_fafaf8"
+            android:textColor="@color/baise"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -30,7 +30,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingBottom="@dimen/y16"
-        android:paddingTop="@dimen/y16">
+        android:paddingTop="@dimen/y16"
+       android:background="@android:color/darker_gray"
+        >
 
         <TextView
             android:layout_width="wrap_content"

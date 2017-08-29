@@ -12,7 +12,7 @@
         <ImageView
             android:id="@+id/jingImage"
             android:layout_width="@dimen/x300"
-            android:layout_height="@dimen/x200"
+            android:layout_height="@dimen/y200"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
