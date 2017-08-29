@@ -141,4 +141,5 @@ public class PandaVideoActivity extends BaseActivity implements PandaVideoContra
 
         }
     };
+
 }
