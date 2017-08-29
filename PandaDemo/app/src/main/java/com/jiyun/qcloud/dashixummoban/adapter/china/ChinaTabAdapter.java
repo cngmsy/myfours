@@ -1,4 +1,4 @@
-package com.jiyun.qcloud.dashixummoban.adapter;
+package com.jiyun.qcloud.dashixummoban.adapter.china;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

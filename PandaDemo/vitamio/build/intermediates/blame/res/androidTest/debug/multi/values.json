@@ -1,6 +1,21 @@
 [
     {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        "outputFile": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+=======
+=======
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+        "outputFile": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
         "outputFile": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+        "outputFile": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
         "map": [
             {
                 "to": {
@@ -11,7 +26,19 @@
                     "endOffset": 105
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +57,19 @@
                     "endOffset": 168
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +88,19 @@
                     "endOffset": 216
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +119,19 @@
                     "endOffset": 270
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -88,7 +151,19 @@
                     "endOffset": 422
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -108,7 +183,19 @@
                     "endOffset": 515
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -127,7 +214,19 @@
                     "endOffset": 583
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -146,7 +245,19 @@
                     "endOffset": 649
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -165,7 +276,19 @@
                     "endOffset": 750
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -184,7 +307,19 @@
                     "endOffset": 821
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -203,7 +338,19 @@
                     "endOffset": 934
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -222,7 +369,19 @@
                     "endOffset": 1021
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -242,7 +401,19 @@
                     "endOffset": 1150
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -262,7 +433,19 @@
                     "endOffset": 1235
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -281,7 +464,19 @@
                     "endOffset": 1308
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -300,7 +495,19 @@
                     "endOffset": 1376
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -320,7 +527,19 @@
                     "endOffset": 2023
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -341,7 +560,19 @@
                     "endOffset": 2233
                 },
                 "from": {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                    "file": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+=======
+                    "file": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
+=======
                     "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
+=======
+                    "file": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\values\\values.xml",
+>>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
                     "position": {
                         "startLine": 31,
                         "startColumn": 4,

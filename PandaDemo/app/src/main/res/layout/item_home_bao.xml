@@ -3,8 +3,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#fff"
-    android:layout_marginLeft="@dimen/x9"
-    android:layout_marginRight="@dimen/x9">
+    android:layout_margin="@dimen/x9">
+
+
     <TextView
         android:id="@+id/recyc_title_name"
         android:layout_width="match_parent"

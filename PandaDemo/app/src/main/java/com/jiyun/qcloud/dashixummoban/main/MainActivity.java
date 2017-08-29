@@ -3,6 +3,8 @@ package com.jiyun.qcloud.dashixummoban.main;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v4.app.FragmentManager;
+import android.util.Log;
+import android.view.Display;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -28,6 +30,7 @@ import com.orhanobut.logger.Logger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import util.UpdateAppUtils;
 
 /**
  * Created by chj on 2017/8/20.
@@ -67,18 +70,27 @@ public class MainActivity extends BaseActivity {
         HomePageFragment homeFragment = (HomePageFragment) FragmentMager.getInstance().start(R.id.container, HomePageFragment.class, false).build();
         //presenter在这里初始化
         new HomePresenter(homeFragment);
+
+        //版本更新
+        UpdateAppUtils.from(this)//Activity名
+                .serverVersionCode(2)  //服务器versionCode
+                .serverVersionName("2.0") //服务器versionName
+                .apkPath("http://123.206.14.104:8080/FileUploadDemo/files/app-debug.apk") //最新apk下载地址
+                .update();
     }
 
     @Override
     protected void initView() {
-
+//打印屏幕分辨率
+        Display display = getWindowManager().getDefaultDisplay();
+        Log.e("width-display :", display.getWidth() + "");
+        Log.e("heigth-display :", display.getHeight() + "");
     }
 
     @Override
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
-
 
     @OnClick({R.id.homePage, R.id.homePandaLive, R.id.homeRollVideo, R.id.homePandaBroadcast, R.id.homeLiveChina})
     public void onClicks(View view) {

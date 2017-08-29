@@ -57,8 +57,6 @@ public class PersonActivity extends BaseActivity {
         return R.layout.activity_person;
     }
 
-
-
     @OnClick({R.id.login, R.id.hostory, R.id.shoucang, R.id.set,R.id.back})
     public void onViewClicked(View view) {
         switch (view.getId()) {
