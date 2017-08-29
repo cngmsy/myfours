@@ -1,6 +1,7 @@
 package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 
+import com.jiyun.qcloud.dashixummoban.entity.Bobao.BoBean;
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
@@ -45,4 +46,6 @@ public interface IPandaHomeModel extends BaseModel {
     void getLivaPage(NetWorkCallBack<BigLiveBean> callBack);
 
     void getShareData(NetWorkCallBack<ShareBean> callBack);
+
+    void getBoBaoDetail(Map<String,String> map, NetWorkCallBack<BoBean> callBack);
 }

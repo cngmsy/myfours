@@ -87,7 +87,6 @@ public class MainActivity extends BaseActivity {
         return R.layout.activity_main;
     }
 
-
     @OnClick({R.id.homePage, R.id.homePandaLive, R.id.homeRollVideo, R.id.homePandaBroadcast, R.id.homeLiveChina})
     public void onClicks(View view) {
         switch (view.getId()) {
