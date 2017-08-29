@@ -3,8 +3,6 @@ package com.jiyun.qcloud.dashixummoban.activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.os.Handler;
-import android.os.Message;
 import android.text.Html;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -12,16 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.jiyun.qcloud.dashixummoban.R;
-import com.jiyun.qcloud.dashixummoban.app.AppConfig;
 import com.jiyun.qcloud.dashixummoban.base.BaseActivity;
-import com.jiyun.qcloud.dashixummoban.modle.utils.DataCleanManager;
-
-import java.util.Properties;
+import com.jiyun.qcloud.dashixummoban.modle.utils.GlideCacheUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-
-import static java.lang.System.getProperties;
 
 /**
  * Created by liuwangping on 2017/8/28.
@@ -38,7 +31,8 @@ public class ClearActivity extends BaseActivity {
     private final int CLEAN_FAIL = 1002;
     @Override
     protected void initData() {
-
+        String cacheSize = GlideCacheUtil.getInstance().getCacheSize(ClearActivity.this);
+        MySetCacheShu.setText(cacheSize);
     }
 
     @Override
@@ -50,9 +44,6 @@ public class ClearActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_clearcache;
     }
-
-
-
     @OnClick(R.id.MySet_Cache)
     public void onViewClicked() {
         onClickCleanCache();
@@ -63,7 +54,8 @@ public class ClearActivity extends BaseActivity {
                 () {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-                clearAppCache();
+                GlideCacheUtil.getInstance().clearImageAllCache(ClearActivity.this);
+                Toast.makeText(ClearActivity.this, "清除成功", Toast.LENGTH_SHORT).show();
                 MySetCacheShu.setText("0KB");
             }
         }).show();
@@ -81,68 +73,6 @@ public class ClearActivity extends BaseActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
         return builder;
     }
-
-    /**
-     * 清除app缓存
-     *
-     * @param
-     */
-    public void clearAppCache() {
-
-        new Thread() {
-            @Override
-            public void run() {
-                Message msg = new Message();
-                try {
-                    myclearaAppCache();
-                    msg.what = CLEAN_SUC;
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    msg.what = CLEAN_FAIL;
-                }
-                handler.sendMessage(msg);
-            }
-        }.start();
-    }
-
-    private Handler handler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
-            switch (msg.what) {
-                case CLEAN_FAIL:
-                    Toast.makeText(ClearActivity.this, "清除失败", Toast.LENGTH_SHORT).show();
-                    break;
-                case CLEAN_SUC:
-                    Toast.makeText(ClearActivity.this, "清除成功", Toast.LENGTH_SHORT).show();
-                    break;
-            }
-        }
-    };
-
-    /**
-     * 清除app缓存
-     */
-    public void myclearaAppCache() {
-        DataCleanManager.cleanDatabases(this);
-        // 清除数据缓存
-        DataCleanManager.cleanInternalCache(this);
-
-        if (isMethodsCompat(android.os.Build.VERSION_CODES.FROYO)) {
-        }
-        // 清除编辑器保存的临时内容
-        Properties props = getProperties();
-        for (Object key : props.keySet()) {
-            String _key = key.toString();
-            if (_key.startsWith("temp"))
-                removeProperty(_key);
-        }
-    }
-    public static boolean isMethodsCompat(int VersionCode) {
-        int currentVersion = android.os.Build.VERSION.SDK_INT;
-        return currentVersion >= VersionCode;
-    }
-
-    public void removeProperty(String... key) {
-        AppConfig.getAppConfig(this).remove(key);
-    }
+    
 
 }
