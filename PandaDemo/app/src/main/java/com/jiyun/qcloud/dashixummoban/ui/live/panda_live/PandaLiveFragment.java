@@ -32,6 +32,7 @@ import java.util.ArrayList;
 
 import butterknife.OnClick;
 import io.vov.vitamio.MediaPlayer;
+import io.vov.vitamio.Vitamio;
 import io.vov.vitamio.widget.VideoView;
 
 /**
@@ -91,6 +92,7 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
 
     @Override
     protected void initView(View view) {
+        Vitamio.isInitialized(getContext());
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("zlj");
         getActivity().registerReceiver(receiver, intentFilter);

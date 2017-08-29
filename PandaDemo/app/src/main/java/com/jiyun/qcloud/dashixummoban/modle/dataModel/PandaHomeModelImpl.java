@@ -2,6 +2,7 @@ package com.jiyun.qcloud.dashixummoban.modle.dataModel;
 
 
 import com.jiyun.qcloud.dashixummoban.config.Urls;
+import com.jiyun.qcloud.dashixummoban.entity.Bobao.BoBean;
 import com.jiyun.qcloud.dashixummoban.entity.PandaHome;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.BillowingBean;
 import com.jiyun.qcloud.dashixummoban.entity.homeentily.WonderfulBean;
@@ -26,17 +27,17 @@ import java.util.Map;
 
 public class  PandaHomeModelImpl implements IPandaHomeModel {
 
-//主页
+    //主页
     @Override
     public void loadHomeList(NetWorkCallBack<PandaHome> callback) {
         iHttp.get(Urls.HOMELUN,null,callback);
     }
-
+     //首页精彩一刻
     @Override
     public void loadJingCaiList(NetWorkCallBack<WonderfulBean> callback) {
         iHttp.get(Urls.WONDERFUL,null,callback);
     }
-
+   //首页滚滚视频
     @Override
     public void loadGunGunList(NetWorkCallBack<BillowingBean> callback) {
         iHttp.get(Urls.BILLOWING,null,callback);
@@ -94,6 +95,11 @@ public class  PandaHomeModelImpl implements IPandaHomeModel {
     @Override
     public void getShareData(NetWorkCallBack<ShareBean> callBack) {
         iHttp.get(Urls.SHARE,null,callBack);
+    }
+
+    @Override
+    public void getBoBaoDetail(Map<String, String> map, NetWorkCallBack<BoBean> callBack) {
+        HttpFactory.createOK().get(Urls.BOBAODETAIL,map,callBack);
     }
 
 }

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
@@ -133,8 +134,9 @@ public class ObServationFragment extends BaseFragment implements ObContract.View
         adapter.setOnItemClickLinear(new BoAdapter.OnItemClickLinear() {
             @Override
             public void onItemvlick(int position) {
-                Intent intent = new Intent(getContext(), BoxiangActivity.class);
-                intent.putExtra("url",list.get(position).getUrl());
+                Toast.makeText(getActivity(),"Shaskjasjas",Toast.LENGTH_SHORT).show();
+               Intent intent = new Intent(getActivity(), BoxiangActivity.class);
+               intent.putExtra("id",bolist.get(position).getId());
                 getActivity().startActivity(intent);
             }
         });

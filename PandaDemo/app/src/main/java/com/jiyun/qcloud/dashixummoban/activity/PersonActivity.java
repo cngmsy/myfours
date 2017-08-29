@@ -69,10 +69,12 @@ public class PersonActivity extends BaseActivity {
             case R.id.shoucang:
                 break;
             case R.id.set:
+                startActivity(new Intent(PersonActivity.this, ClearActivity.class));
                 break;
             case R.id.back:
                 finish();
                 break;
         }
+
     }
 }

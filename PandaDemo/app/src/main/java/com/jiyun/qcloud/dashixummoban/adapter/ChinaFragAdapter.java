@@ -85,10 +85,12 @@ public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
             holder.setViewVisiable(R.id.bofang,View.GONE);
             holder.setViewVisiable(R.id.jcvideoplayer,View.VISIBLE);
                 img.setVisibility(View.GONE);
-                //视频播放
                 JCVideoPlayer player= holder.itemView.findViewById(R.id.jcvideoplayer);
                 player.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
                 player.setUp(bean.getFlv_url().getFlv2(),null);
+
+
+
             }
         });
     }

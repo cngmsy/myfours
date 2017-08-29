@@ -15,6 +15,7 @@ import com.jude.rollviewpager.hintview.ColorPointHintView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import util.UpdateAppUtils;
 
 public class WelComeActivity extends BaseActivity {
 

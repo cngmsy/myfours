@@ -9,7 +9,7 @@ public class Urls {
 
     //服务器地址
     private static final String BASEURL = "http://www.ipanda.com/kehuduan/";
-    //首页精彩一刻http://www.ipanda.com/kehuduan/shipinliebieye/video/index.json
+    //首页精彩一刻
     public static final String WONDERFUL = BASEURL+"shipinliebieye/jingcaiyike/index.json";
     //首页滚滚视频
     public static final String  BILLOWING = BASEURL+"shipinliebieye/video/index.json";
@@ -38,6 +38,8 @@ public class Urls {
     public static final String MULITANGLE = "http://www.ipanda.com/kehuduan/PAGE14501769230331752/PAGE14501787896813312/index.json";
     //熊猫播报
     public static final String BOBAO = BASEURL + "news/index.json";
+    //?id=ARTIsFxalW8Uzew5svzRCTzH170829&serviceId=panda
+    public static final String BOBAO2 = "http://api.cntv.cn/article/contentinfo";
     public static final String BOBAOList = "http://api.cntv.cn/apicommon/index?path=iphoneInterface/general/getArticleAndVideoListInfo.json&primary_id=PAGE1422435191506336&serviceId=panda";
     //精彩一刻
     public static final String SPLENDURL = "http://api.cntv.cn/video/videolistById";
@@ -48,4 +50,5 @@ public class Urls {
 
     public static final String SHARE="http://www.ipanda.com/kehuduan/PAGE14501767715521482/index.json";
 
+    public static final String BOBAODETAIL="http://api.cntv.cn/article/contentinfo";
 }

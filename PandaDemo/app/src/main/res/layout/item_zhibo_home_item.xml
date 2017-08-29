@@ -13,7 +13,7 @@
             android:src="@drawable/tab_panda_eye_normal"
             android:layout_width="@dimen/x200"
             android:scaleType="fitXY"
-            android:layout_height="@dimen/x140"
+            android:layout_height="@dimen/x130"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
@@ -22,8 +22,8 @@
             android:layout_alignBottom="@+id/myimage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/x5"
-            android:layout_marginBottom="@dimen/x5"/>
+            android:layout_marginLeft="@dimen/x10"
+            android:layout_marginBottom="@dimen/x8"/>
         <TextView
             android:id="@+id/zhibotext"
             android:layout_width="@dimen/x180"

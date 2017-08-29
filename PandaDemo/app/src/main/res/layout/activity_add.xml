@@ -35,7 +35,7 @@
             android:layout_margin="@dimen/x20"
             android:text="编辑"
             android:textSize="16sp"
-            android:background="@color/white_fafaf8"
+            android:background="@color/baise"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -43,7 +43,7 @@
         <TextView
             android:text="长按拖动可以排序"
             android:visibility="gone"
-            android:textColor="@color/white_fafaf8"
+            android:textColor="@color/baise"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"

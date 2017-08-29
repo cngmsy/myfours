@@ -28,6 +28,7 @@ import com.orhanobut.logger.Logger;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import util.UpdateAppUtils;
 
 /**
  * Created by chj on 2017/8/20.
@@ -67,6 +68,13 @@ public class MainActivity extends BaseActivity {
         HomePageFragment homeFragment = (HomePageFragment) FragmentMager.getInstance().start(R.id.container, HomePageFragment.class, false).build();
         //presenter在这里初始化
         new HomePresenter(homeFragment);
+
+        //版本更新
+        UpdateAppUtils.from(this)//Activity名
+                .serverVersionCode(2)  //服务器versionCode
+                .serverVersionName("2.0") //服务器versionName
+                .apkPath("http://123.206.14.104:8080/FileUploadDemo/files/app-debug.apk") //最新apk下载地址
+                .update();
     }
 
     @Override
@@ -78,7 +86,6 @@ public class MainActivity extends BaseActivity {
     protected int getLayoutId() {
         return R.layout.activity_main;
     }
-
 
     @OnClick({R.id.homePage, R.id.homePandaLive, R.id.homeRollVideo, R.id.homePandaBroadcast, R.id.homeLiveChina})
     public void onClicks(View view) {
