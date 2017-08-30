@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.view.View;
+import android.widget.Toast;
 
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
@@ -102,5 +103,11 @@ public class LivePageFragment extends BaseFragment implements LivePageContract.L
             viewPage.setNoScroll(true);
             tabLayout.setupWithViewPager(viewPage);
         }
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Toast.makeText(getContext(), "11", Toast.LENGTH_SHORT).show();
     }
 }

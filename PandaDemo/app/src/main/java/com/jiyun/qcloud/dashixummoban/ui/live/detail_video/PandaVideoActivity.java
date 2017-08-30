@@ -1,7 +1,6 @@
 package com.jiyun.qcloud.dashixummoban.ui.live.detail_video;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -73,16 +72,16 @@ public class PandaVideoActivity extends BaseActivity implements PandaVideoContra
         panda_video.setUp(url, title);
     }
 
-    @Override
+  /*  @Override
     protected void onResume() {
         super.onResume();
-        /**
+        *//**
          * 设置为横屏
-         */
+         *//*
         if(getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE){
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         }
-    }
+    }*/
 
     @Override
     protected void onPause() {
