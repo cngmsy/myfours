@@ -10,7 +10,7 @@
         android:id="@+id/recyc_title_name"
         android:layout_width="match_parent"
         android:text="熊猫播报"
-        android:textSize="14sp"
+        android:textSize="15sp"
         android:gravity="center_vertical"
         android:padding="10dp"
         android:textColor="#57388d"
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_margin="@dimen/x25"
+                android:layout_margin="@dimen/x27"
                 android:text="发现"
                 android:textColor="#ff0a5a" />
                <TextView

@@ -8,13 +8,11 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="200dp">
-       
-        <io.vov.vitamio.widget.VideoView
+
+        <com.dl7.player.media.IjkPlayerView
             android:id="@+id/vitamio"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true" />
+            android:layout_height="200dp"/>
 
         <ImageView
             android:id="@+id/pandanlive_vitamio"

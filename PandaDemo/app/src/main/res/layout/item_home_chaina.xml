@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_marginLeft="@dimen/x9"
+    android:layout_marginRight="@dimen/x9"
     android:background="#fff"
     android:layout_height="wrap_content">
         <TextView
             android:id="@+id/recyc_title_name"
             android:layout_width="match_parent"
             android:text="直播中国"
-            android:textSize="14sp"
+            android:textSize="15sp"
             android:gravity="center_vertical"
             android:padding="10dp"
             android:textColor="#57388d"
@@ -17,14 +19,12 @@
             android:layout_width="match_parent"
             android:background="#dbd9d9"
             android:layout_height="@dimen/y4" />
-
-
     <com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview
         android:id="@+id/chinaview"
         android:numColumns="3"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/y720"></com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview>
 
-        android:layout_height="@dimen/y700"></com.jiyun.qcloud.dashixummoban.ui.home.StationaryGridview>
 
     <TextView
         android:layout_width="match_parent"

@@ -47,10 +47,12 @@
         <activity android:name=".main.WelComeActivity" />
         <activity
             android:name=".ui.home.activity.ZhoBoActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"></activity>
         <activity
             android:name=".ui.home.activity.JCVideoActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize" />
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape"/>
 
 
         <activity android:name=".ui.live.detail_video.PandaVideoActivity" />

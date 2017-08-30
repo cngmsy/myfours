@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'android-apt'
+
 android {
     compileSdkVersion 26
     buildToolsVersion '26.0.0'
@@ -15,6 +16,14 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'x86_64', 'armeabi-v7a', 'armeabi'
+            universalApk false
         }
     }
 }
@@ -47,13 +56,9 @@ dependencies {
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
     compile project(':vitamio')
-
-
     dependencies {
         compile 'org.jsoup:jsoup:1.9.2'
     }
-
-
     compile 'com.teprinciple:updateapputils:1.1'
     compile files('libs/SocialSDK_QQ_Simplify.jar')
     compile files('libs/SocialSDK_Sina_Simplify.jar')
@@ -65,5 +70,6 @@ dependencies {
     compile files('libs/umeng_social_shareview.jar')
     compile files('libs/umeng_social_tool.jar')
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
+    compile project(':player')
 
 }
