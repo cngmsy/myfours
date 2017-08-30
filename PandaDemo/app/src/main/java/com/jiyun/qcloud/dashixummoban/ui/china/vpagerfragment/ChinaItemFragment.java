@@ -116,6 +116,8 @@ public class ChinaItemFragment extends BaseFragment implements ChinaFragContract
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         JCVideoPlayer.releaseAllVideos();
+
+
     }
 
     @Override

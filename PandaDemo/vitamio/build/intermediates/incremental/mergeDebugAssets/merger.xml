@@ -1,6 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <merger version="3"><dataSet config="main"><source path="D:\BigRating\pandaTV4\PandaDemo\vitamio\src\main\assets"/><source path="D:\BigRating\pandaTV4\PandaDemo\vitamio\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="D:\BigRating\pandaTV4\PandaDemo\vitamio\src\debug\assets"/></dataSet></merger>
-=======
-<merger version="3"><dataSet config="main"><source path="F:\Documents\PandaDemo\vitamio\src\main\assets"/><source path="F:\Documents\PandaDemo\vitamio\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="F:\Documents\PandaDemo\vitamio\src\debug\assets"/></dataSet></merger>
->>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
