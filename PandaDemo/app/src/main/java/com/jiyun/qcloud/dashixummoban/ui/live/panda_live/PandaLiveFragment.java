@@ -5,7 +5,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -17,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.dl7.player.media.IjkPlayerView;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
 import com.jiyun.qcloud.dashixummoban.entity.pandalive.LiveVideoBean;
@@ -31,9 +31,7 @@ import com.jiyun.qcloud.dashixummoban.view.MyViewPager;
 import java.util.ArrayList;
 
 import butterknife.OnClick;
-import io.vov.vitamio.MediaPlayer;
 import io.vov.vitamio.Vitamio;
-import io.vov.vitamio.widget.VideoView;
 
 /**
  *
@@ -74,7 +72,7 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
             pandanliveName.setText(listBean.getTitle());
         }
     };
-    private VideoView vitamio;
+    private IjkPlayerView vitamio;
     private MyMediaController mMediaController;
     private String flv2;
 
@@ -169,11 +167,31 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
     }
 
     private void playVideo() {
-        vitamio.setVideoURI(Uri.parse(flv2));
+       /* vitamio.setVideoURI(Uri.parse(flv2));
         mMediaController = new MyMediaController(getContext(),vitamio,getActivity());//实例化控制器
         mMediaController.show(5000);//控制器显示5s后自动隐藏
         vitamio.setMediaController(mMediaController);//绑定控制器
         vitamio.setVideoQuality(MediaPlayer.VIDEOQUALITY_HIGH);//设置播放画质 高画质
-        vitamio.requestFocus();//取得焦点
+        vitamio.requestFocus();//取得焦点*/
+       vitamio.init().setVideoPath(flv2).start();
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        vitamio.onResume();
+    }
+    @Override
+    public void onPause() {
+        super.onPause();
+        vitamio.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        vitamio.onDestroy();
+        vitamio.stop();
+    }
+
 }
