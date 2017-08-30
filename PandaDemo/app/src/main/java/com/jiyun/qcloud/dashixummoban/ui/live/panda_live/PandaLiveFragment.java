@@ -68,7 +68,7 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
         @Override
         public void onReceive(Context context, Intent intent) {
             listBean = (MultiBean.ListBean) intent.getSerializableExtra("listBean");
-            livePresenter.setURL("http://vdn.live.cntv.cn/api2/live.do?client=androidapp&channel=pa://cctv_p2p_hd"+listBean.getId());
+            livePresenter.setURL("http://vdn.live.cntv.cn/api2/live.do?client=androidapp&channel=pa://cctv_p2p_hd" + listBean.getId());
             pandanliveName.setText(listBean.getTitle());
         }
     };
@@ -105,6 +105,7 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
         pandanliveContent.setVisibility(View.GONE);
 
     }
+
     @Override
     public void setBundle(Bundle bundle) {
 
@@ -173,7 +174,7 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
         vitamio.setMediaController(mMediaController);//绑定控制器
         vitamio.setVideoQuality(MediaPlayer.VIDEOQUALITY_HIGH);//设置播放画质 高画质
         vitamio.requestFocus();//取得焦点*/
-       vitamio.init().setVideoPath(flv2).start();
+        vitamio.init().setVideoPath(flv2).start();
     }
 
     @Override
@@ -181,6 +182,7 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
         super.onResume();
         vitamio.onResume();
     }
+
     @Override
     public void onPause() {
         super.onPause();
@@ -194,4 +196,24 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
         vitamio.stop();
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+        if (isVisibleToUser) {
+            livePresenter = new LivePresenter(this);
+            livePresenter.start();
+        } else {
+            if (vitamio != null) {
+                if (flv2 != null || vitamio.isPlaying()) {
+                    flv2 = null;
+                    vitamio.onPause();
+                }
+                if (flv2 != null || vitamio.isPlaying()) {
+                    flv2 = null;
+                    vitamio.onDestroy();
+                }
+            }
+        }
+    }
 }
