@@ -4,9 +4,9 @@
     android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/x140"
+        android:layout_height="@dimen/y150"
         android:orientation="horizontal"
-        android:padding="@dimen/x20">
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/gunimage"
@@ -23,7 +23,7 @@
             android:orientation="vertical">
             <TextView
                 android:textColor="#000"
-                android:layout_marginTop="@dimen/x12"
+                android:layout_marginTop="@dimen/y12"
                 android:id="@+id/guntitle"
                 android:text="你好啊大家"
                 android:layout_width="wrap_content"
@@ -34,7 +34,7 @@
                 android:textColor="#000"
                 android:id="@+id/gundata"
                 android:textSize="@dimen/x20"
-                android:layout_marginTop="@dimen/x15"
+                android:layout_marginTop="@dimen/y15"
                 android:text="2017-08-22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -43,5 +43,5 @@
     <TextView
         android:layout_width="match_parent"
         android:background="#dbd9d9"
-        android:layout_height="@dimen/x2" />
+        android:layout_height="@dimen/y2" />
 </LinearLayout>

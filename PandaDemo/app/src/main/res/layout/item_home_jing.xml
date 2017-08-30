@@ -23,5 +23,6 @@
         android:id="@+id/jingGridView"
         android:numColumns="2"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/y720"/>
 
 </LinearLayout>

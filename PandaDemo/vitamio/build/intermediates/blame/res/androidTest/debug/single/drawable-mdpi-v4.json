@@ -1,24 +1,6 @@
 [
     {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        "merged": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "D:\\BigRating\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
-=======
-=======
->>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
-        "merged": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "D:\\Documents\\pandaTV4\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
->>>>>>> d4124d0fc1dc2c0bbe8806f33353a8cc0950d470
-=======
         "merged": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
         "source": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
->>>>>>> 8f9ef07eee498361b013049429ce693a316b724e
-=======
-        "merged": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "F:\\Documents\\PandaDemo\\vitamio\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\ic_launcher.png"
->>>>>>> a39734c251f4b1b6f4bba1a4ae79e67185e8c461
     }
 ]
