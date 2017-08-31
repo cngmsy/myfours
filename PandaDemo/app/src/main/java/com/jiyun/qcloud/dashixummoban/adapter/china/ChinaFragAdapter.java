@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import com.androidkun.adapter.BaseAdapter;
 import com.androidkun.adapter.ViewHolder;
 import com.bumptech.glide.Glide;
+import com.dl7.player.media.IjkPlayerView;
 import com.google.gson.Gson;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.entity.china.ChinaFragmentBean;
@@ -15,7 +16,6 @@ import com.jiyun.qcloud.dashixummoban.entity.china.LiveChinaLiveBean;
 import java.io.IOException;
 import java.util.List;
 
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import io.vov.vitamio.widget.MediaController;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -30,6 +30,7 @@ import okhttp3.Response;
 public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
     private int i = 1;
     private LiveChinaLiveBean bean;
+    private IjkPlayerView player;
 
     public ChinaFragAdapter(Context context,List<ChinaFragmentBean.LiveBean> datas) {
         super(context, R.layout.item_livechina_fragment, datas);
@@ -88,10 +89,11 @@ public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
                 holder.setViewVisiable(R.id.jcvideoplayer,View.VISIBLE);
                 img.setVisibility(View.GONE);
                 //视频播放
-                JCVideoPlayer player= holder.itemView.findViewById(R.id.jcvideoplayer);
-                player.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
-                player.setUp(bean.getFlv_url().getFlv2(),null);
-
+                player = holder.itemView.findViewById(R.id.jcvideoplayer);
+                player.init().setVideoPath(bean.getHls_url().getHls2()).start();
+              /*  player.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
+                player.setUp(bean.getHls_url().getHls2(),null);
+*/
 //                VideoView viewById = holder.itemView.findViewById(R.id.look_video);
 //                controller = new MediaController(context);//实例化控制器
 //                controller.show();//控制器显示5s后自动隐藏
@@ -99,6 +101,14 @@ public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
 ////                viewById.setVideoQuality(MediaPlayer.VIDEOQUALITY_LOW);//设置播放画质 高画质
 //                viewById.requestFocus();//取得焦点
 //                viewById.setVideoPath(bean.getFlv_url().getFlv2());//设置播放地址
+            }
+        });
+
+        holder.setOnclickListener(R.id.look_content, new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                player.stop();
+                img.setVisibility(View.VISIBLE);
             }
         });
     }

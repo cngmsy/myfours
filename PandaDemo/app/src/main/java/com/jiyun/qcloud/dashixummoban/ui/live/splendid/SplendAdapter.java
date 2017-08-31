@@ -24,6 +24,7 @@ import java.util.List;
 public class SplendAdapter extends RecyclerView.Adapter<SplendAdapter.SplendViewHolder> {
     private Context context;
     private List<SplendBean.VideoBean> list;
+    private SplendViewHolder viewHolder;
 
     public SplendAdapter(Context context, List<SplendBean.VideoBean> list) {
         this.context = context;
@@ -32,8 +33,11 @@ public class SplendAdapter extends RecyclerView.Adapter<SplendAdapter.SplendView
 
     @Override
     public SplendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.activity_splendid_item, null);
-        SplendViewHolder viewHolder = new SplendViewHolder(view);
+        if(viewType==0){
+            View view = LayoutInflater.from(context).inflate(R.layout.activity_splendid_item, null);
+            viewHolder = new SplendViewHolder(view);
+
+        }
         return viewHolder;
     }
 

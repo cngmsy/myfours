@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.widget.LinearLayoutManager;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -125,7 +124,7 @@ public class BianLiveFragment extends BaseFragment implements BianLiveContract.B
     @Override
     public void setResultData(BiankanBianliaoBean resultData) {
         list.addAll(resultData.getData().getContent());
-        Log.e("TG", list.get(0).getMessage());
+//        Log.e("TG", list.get(0).getMessage());
         adapter.notifyDataSetChanged();
     }
 

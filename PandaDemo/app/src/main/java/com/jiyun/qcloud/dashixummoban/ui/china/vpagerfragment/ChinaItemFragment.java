@@ -5,7 +5,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import com.androidkun.PullToRefreshRecyclerView;
-import com.androidkun.callback.PullToRefreshListener;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.adapter.china.ChinaFragAdapter;
 import com.jiyun.qcloud.dashixummoban.base.BaseFragment;
@@ -15,7 +14,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
 /**
  * Created by liuwangping on 2017/8/24.
@@ -54,32 +52,34 @@ public class ChinaItemFragment extends BaseFragment implements ChinaFragContract
     @Override
     protected void initView(View view) {
         chinaPullRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        chinaPullRv.setPullToRefreshListener(new PullToRefreshListener() {
-            @Override
-            public void onRefresh() {
-                chinaPullRv.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        beanList.clear();
-                        initData();
-                        adapter.notifyDataSetChanged();
-                        chinaPullRv.setRefreshComplete();
-                    }
-                },2000);
-
-            }
-
-            @Override
-            public void onLoadMore() {
-                chinaPullRv.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        chinaPullRv.setLoadMoreComplete();
-                    }
-                },2000);
-
-            }
-        });
+        chinaPullRv.setPullRefreshEnabled(false);
+        chinaPullRv.setLoadingMoreEnabled(false);
+//        chinaPullRv.setPullToRefreshListener(new PullToRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                chinaPullRv.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        beanList.clear();
+//                        initData();
+//                        adapter.notifyDataSetChanged();
+//                        chinaPullRv.setRefreshComplete();
+//                    }
+//                },2000);
+//
+//            }
+//
+//            @Override
+//            public void onLoadMore() {
+//                chinaPullRv.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        chinaPullRv.setLoadMoreComplete();
+//                    }
+//                },2000);
+//
+//            }
+//        });
         adapter=new ChinaFragAdapter(getContext(),beanList);
         chinaPullRv.setAdapter(adapter);
     }
@@ -112,11 +112,11 @@ public class ChinaItemFragment extends BaseFragment implements ChinaFragContract
 
     }
 //往上滑的时候自动停
-    @Override
+/*    @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         JCVideoPlayer.releaseAllVideos();
-    }
+    }*/
 
     @Override
     public void setPresenter(ChinaFragContract.Presenter presenter) {

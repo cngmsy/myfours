@@ -148,9 +148,9 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
     @Override
     public void setResultData(PandaLiveBean resultData) {
 
+        list.clear();
         list.add(new MultiFragment());
         list.add(new BianLiveFragment());
-
         Glide.with(getActivity())
                 .load(resultData.getLive().get(0).getImage())
                 .into(pandanliveVitamio);
@@ -184,6 +184,15 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
     }
 
     @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if(hidden==true){
+
+        }
+    }
+
+    /*
+    @Override
     public void onPause() {
         super.onPause();
         vitamio.onPause();
@@ -194,12 +203,10 @@ public class PandaLiveFragment extends BaseFragment implements LiveContract.Live
         super.onDestroy();
         vitamio.onDestroy();
         vitamio.stop();
-    }
-
+    }*/
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-
         if (isVisibleToUser) {
             livePresenter = new LivePresenter(this);
             livePresenter.start();

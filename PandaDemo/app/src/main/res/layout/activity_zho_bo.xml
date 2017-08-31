@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.jiyun.qcloud.dashixummoban.ui.home.activity.ZhoBoActivity">
-<io.vov.vitamio.widget.VideoView
+<com.dl7.player.media.IjkPlayerView
     android:id="@+id/zhiboview"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
