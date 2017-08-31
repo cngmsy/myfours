@@ -12,11 +12,11 @@ import com.google.gson.Gson;
 import com.jiyun.qcloud.dashixummoban.R;
 import com.jiyun.qcloud.dashixummoban.entity.china.ChinaFragmentBean;
 import com.jiyun.qcloud.dashixummoban.entity.china.LiveChinaLiveBean;
+import com.jiyun.qcloud.dashixummoban.view.MyMediaController;
 
 import java.io.IOException;
 import java.util.List;
 
-import io.vov.vitamio.widget.MediaController;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -30,7 +30,9 @@ import okhttp3.Response;
 public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
     private int i = 1;
     private LiveChinaLiveBean bean;
+
     private IjkPlayerView player;
+
 
     public ChinaFragAdapter(Context context,List<ChinaFragmentBean.LiveBean> datas) {
         super(context, R.layout.item_livechina_fragment, datas);
@@ -82,7 +84,7 @@ public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
 
 
         holder.setOnclickListener(R.id.bofang, new View.OnClickListener() {
-            private MediaController controller;
+            private MyMediaController controller;
             @Override
             public void onClick(View view) {
                 holder.setViewVisiable(R.id.bofang,View.GONE);
@@ -90,26 +92,26 @@ public class ChinaFragAdapter extends BaseAdapter<ChinaFragmentBean.LiveBean> {
                 img.setVisibility(View.GONE);
                 //视频播放
                 player = holder.itemView.findViewById(R.id.jcvideoplayer);
+
                 player.init().setVideoPath(bean.getHls_url().getHls2()).start();
-              /*  player.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
-                player.setUp(bean.getHls_url().getHls2(),null);
-*/
-//                VideoView viewById = holder.itemView.findViewById(R.id.look_video);
-//                controller = new MediaController(context);//实例化控制器
-//                controller.show();//控制器显示5s后自动隐藏
-////                viewById.setMediaController(controller);//绑定控制器
-////                viewById.setVideoQuality(MediaPlayer.VIDEOQUALITY_LOW);//设置播放画质 高画质
-//                viewById.requestFocus();//取得焦点
-//                viewById.setVideoPath(bean.getFlv_url().getFlv2());//设置播放地址
-            }
-        });
+
+
 
         holder.setOnclickListener(R.id.look_content, new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 player.stop();
                 img.setVisibility(View.VISIBLE);
+                player.setVisibility(View.GONE);
+
+
             }
         });
+
+            }
+        });
+
     }
+
 }

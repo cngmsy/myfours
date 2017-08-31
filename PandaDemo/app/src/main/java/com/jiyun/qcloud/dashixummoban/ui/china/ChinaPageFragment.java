@@ -149,7 +149,6 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
         //给上下Gridlayout赋值
         topmygridlayout.setAddList(tabNamelist);
         bottommygridlayout.setAddList(stringArrayList);
-
         //这是初始化布局为了显示PuPO
         //这是new一个对象后面的参数。第一个参数布局，第二个参数用容器调用一个系统的方法，后面的是旋转的度数
         final PopupWindow popupWindow = new PopupWindow(inflate, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
@@ -166,7 +165,6 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
             @Override
             public void onClick(View view) {
                 final String str =bianji.getText().toString().trim();
-
                 if (str.equals("编辑")) {
                     bianji.setText("完成");
                     hideText.setVisibility(View.VISIBLE);
@@ -190,6 +188,8 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
                                         tablist.remove(i);
                                         tabNamelist.remove(tv.getText().toString().trim());
                                         fragmentlist.remove(i);
+                                        adapter.notifyDataSetChanged();
+
                                     }
                                 }
                             }else{
@@ -217,6 +217,8 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
                                     alllist.remove(i);
                                     tabNamelist.add(tv.getText().toString().trim());
                                     fragmentlist.add(new ChinaItemFragment(alllistBean.getUrl()));
+                                    adapter.notifyDataSetChanged();
+
                                 }
                             }
                         }
@@ -225,16 +227,18 @@ public class ChinaPageFragment extends BaseFragment implements LiveChinaContract
                 } else if (str.equals("完成")) {
                     bianji.setText("编辑");
                     hideText.setVisibility(View.GONE);
-//                    adapter.notifyDataSetChanged();
+                    adapter.notifyDataSetChanged();
                     topmygridlayout.setOnItemClickListener(new MyGridLayout.OnItemClickListener() {
                         @Override
                         public void onItemClick(TextView tv) {
+                            adapter.notifyDataSetChanged();
 
                         }
                     });
                     bottommygridlayout.setOnItemClickListener(new MyGridLayout.OnItemClickListener() {
                         @Override
                         public void onItemClick(TextView tv) {
+                            adapter.notifyDataSetChanged();
 
                         }
                     });
